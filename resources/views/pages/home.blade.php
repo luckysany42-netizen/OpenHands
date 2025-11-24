@@ -15,15 +15,8 @@
                         <div class="container">
                             <div class="row justify-content-center">
                                 <div class="col-lg-7 pt-5">
-                                    <h1 class="display-4 text-white mb-3 animated slideInDown">Let's Change The World With
-                                        Humanity</h1>
-                                    <p class="fs-5 text-white-50 mb-5 animated slideInDown">Aliqu diam amet diam et eos.
-                                        Clita erat ipsum et lorem sed stet lorem sit clita duo justo erat amet</p>
-                                    <a class="btn btn-primary py-2 px-3 animated slideInDown" href="">
-                                        Learn More
-                                        <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
-                                            <i class="fa fa-arrow-right"></i>
-                                        </div>
+                                    <h1 class="display-4 text-white mb-3 animated slideInDown">Dari Hati Untuk Sesama</h1>
+                                    <p class="fs-5 text-white-50 mb-5 animated slideInDown">Kami menghubungkan niat baik Anda dengan mereka yang membutuhkan bantuan paling mendesak</p>
                                     </a>
                                 </div>
                             </div>
@@ -36,11 +29,9 @@
                         <div class="container">
                             <div class="row justify-content-center">
                                 <div class="col-lg-7 pt-5">
-                                    <h1 class="display-4 text-white mb-3 animated slideInDown">Let's Save More Lifes With
-                                        Our Helping Hand</h1>
-                                    <p class="fs-5 text-white-50 mb-5 animated slideInDown">Aliqu diam amet diam et eos.
-                                        Clita erat ipsum et lorem sed stet lorem sit clita duo justo erat amet</p>
-                                    <a class="btn btn-primary py-2 px-3 animated slideInDown" href="">
+                                    <h1 class="display-4 text-white mb-3 animated slideInDown">Dari Hati Untuk Sesama</h1>
+                                    <p class="fs-5 text-white-50 mb-5 animated slideInDown">Donasi Anda memberi kesempatan baru bagi mereka yang sedang berjuang</p>
+                                    <a class="btn btn-primary py-2 px-3 animated slideInDown" href="{{ route('learn') }}">
                                         Learn More
                                         <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
                                             <i class="fa fa-arrow-right"></i>
@@ -80,22 +71,19 @@
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="h-100">
                         <div class="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3">About Us</div>
-                        <h1 class="display-6 mb-5">We Help People In Need Around The World</h1>
+                        <h1 class="display-6 mb-5">Harapan Dimulai Dari Kebaikan</h1>
                         <div class="bg-light border-bottom border-5 border-primary rounded p-4 mb-4">
-                            <p class="text-dark mb-2">Aliqu diam amet diam et eos. Clita erat ipsum et lorem sed stet lorem
-                                sit clita duo justo erat amet</p>
-                            <span class="text-primary">Jhon Doe, Founder</span>
+                            <p class="text-dark mb-2">Dengan kontribusi kecil, Anda ikut membangun masa depan yang lebih baik untuk banyak orang</p>
+                            <span class="text-primary">Lucky Meirino Sany, Founder</span>
                         </div>
-                        <p class="mb-5">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam
-                            et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat
-                            amet</p>
-                        <a class="btn btn-primary py-2 px-3 me-3" href="">
+                        <p class="mb-5">Melalui platform ini, kami berkomitmen untuk menghadirkan perubahan nyata bagi mereka yang membutuhkan. Setiap donasi yang Anda berikan besar maupun kecil akan disalurkan secara transparan dan tepat sasaran untuk membantu pendidikan, kesehatan, dan kesejahteraan masyarakat. Bersama, kita bisa menciptakan dampak positif dan membangun masa depan yang lebih baik bagi banyak orang</p>
+                        <a class="btn btn-primary py-2 px-3 me-3" href="{{ route('learn') }}">
                             Learn More
                             <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
                                 <i class="fa fa-arrow-right"></i>
                             </div>
                         </a>
-                        <a class="btn btn-outline-primary py-2 px-3" href="">
+                        <a class="btn btn-outline-primary py-2 px-3" href="/contact">
                             Contact Us
                             <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
                                 <i class="fa fa-arrow-right"></i>
@@ -114,7 +102,7 @@
         <div class="container py-5">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
                 <div class="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3">Feature Causes</div>
-                <h1 class="display-6 mb-5">Every Child Deserves The Opportunity To Learn</h1>
+                <h1 class="display-6 mb-5">Berbagi bukan tentang jumlah tapi tentang kepeduliaan</h1>
             </div>
             <div class="row g-4 justify-content-center">
                 @foreach ($products as $item)
@@ -163,8 +151,8 @@
     <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-                <div class="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3">What We Do</div>
-                <h1 class="display-6 mb-5">Learn More What We Do And Get Involved</h1>
+                <div class="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3">Program Kami</div>
+                <h1 class="display-6 mb-5">Apa Yang Kami Perjuangkan</h1>
             </div>
             <div class="row g-4 justify-content-center">
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -173,7 +161,7 @@
                         <h4 class="mb-3">Child Education</h4>
                         <p class="mb-4">Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed vero
                             dolor duo.</p>
-                        <a class="btn btn-outline-primary px-3" href="">
+                        <a class="btn btn-outline-primary px-3" href="{{ route('learn') }}">
                             Learn More
                             <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
                                 <i class="fa fa-arrow-right"></i>
@@ -187,7 +175,7 @@
                         <h4 class="mb-3">Medical Treatment</h4>
                         <p class="mb-4">Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed vero
                             dolor duo.</p>
-                        <a class="btn btn-outline-primary px-3" href="">
+                        <a class="btn btn-outline-primary px-3" href="{{ route('learn') }}">
                             Learn More
                             <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
                                 <i class="fa fa-arrow-right"></i>
@@ -201,7 +189,7 @@
                         <h4 class="mb-3">Pure Drinking Water</h4>
                         <p class="mb-4">Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed vero
                             dolor duo.</p>
-                        <a class="btn btn-outline-primary px-3" href="">
+                        <a class="btn btn-outline-primary px-3" href="{{ route('learn') }}">
                             Learn More
                             <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
                                 <i class="fa fa-arrow-right"></i>
@@ -221,10 +209,8 @@
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
                     <div class="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3">Donate Now</div>
-                    <h1 class="display-6 text-white mb-5">Thanks For The Results Achieved With You</h1>
-                    <p class="text-white-50 mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam
-                        amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore
-                        erat amet</p>
+                    <h1 class="display-6 text-white mb-5">Satu Aksi Anda, Ribuan Harapan Hidup Kembali</h1>
+                    <p class="text-white-50 mb-0">Satu tindakan sederhana dapat membawa perubahan yang tak terbayangkan bagi banyak orang. Ketika kita memilih untuk membantu, kita tidak hanya memberi bantuan sesaat—kita menghidupkan kembali harapan yang mungkin telah lama padam. Ribuan orang menantikan uluran tangan dan kepedulian kita. Melalui satu aksi kebaikan, kita bisa membuka pintu kesempatan, menguatkan semangat, dan mengembalikan senyuman di wajah mereka yang membutuhkan.</p>
                 </div>
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
                     <div class="h-100 bg-white p-5">
@@ -301,11 +287,12 @@
                             <img class="img-fluid" src="assets/img/team-1.jpg" alt="">
                         </div>
                         <div class="team-text bg-light text-center p-4">
-                            <h5>Full Name</h5>
+                            <h5>Lucky Meirino S</h5>
                             <p class="text-primary">Designation</p>
                             <div class="team-social text-center">
                                 <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
                                 <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square" href=""><i class="fab fa-whatsapp"></i></a>
                                 <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
@@ -317,11 +304,12 @@
                             <img class="img-fluid" src="assets/img/team-2.jpg" alt="">
                         </div>
                         <div class="team-text bg-light text-center p-4">
-                            <h5>Full Name</h5>
-                            <p class="text-primary">Designation</p>
+                            <h5>M Hendry Risky F</h5>
+                            <p class="text-primary">Planner</p>
                             <div class="team-social text-center">
                                 <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
                                 <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square" href=""><i class="fab fa-whatsapp"></i></a>
                                 <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
@@ -338,6 +326,7 @@
                             <div class="team-social text-center">
                                 <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
                                 <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square" href=""><i class="fab fa-whatsapp"></i></a>
                                 <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
@@ -354,6 +343,7 @@
                             <div class="team-social text-center">
                                 <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
                                 <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square" href=""><i class="fab fa-whatsapp"></i></a>
                                 <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
@@ -369,8 +359,8 @@
     <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-                <div class="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3">Testimonial</div>
-                <h1 class="display-6 mb-5">Trusted By Thousands Of People And Nonprofits</h1>
+                <div class="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3">Testimoni</div>
+                <h1 class="display-6 mb-5">Cahaya Kecil Yang Menerangi Jalan</h1>
             </div>
             <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
                 <div class="testimonial-item text-center">

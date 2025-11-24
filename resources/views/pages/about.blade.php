@@ -36,15 +36,12 @@
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="h-100">
                         <div class="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3">About Us</div>
-                        <h1 class="display-6 mb-5">We Help People In Need Around The World</h1>
+                        <h1 class="display-6 mb-5">Harapan Dimulai Dari Kebaikan</h1>
                         <div class="bg-light border-bottom border-5 border-primary rounded p-4 mb-4">
-                            <p class="text-dark mb-2">Aliqu diam amet diam et eos. Clita erat ipsum et lorem sed stet lorem
-                                sit clita duo justo erat amet</p>
-                            <span class="text-primary">Jhon Doe, Founder</span>
+                            <p class="text-dark mb-2">Dengan kontribusi kecil, Anda ikut membangun masa depan yang lebih baik untuk banyak orang</p>
+                            <span class="text-primary">Lucky Meirino Sany, Founder</span>
                         </div>
-                        <p class="mb-5">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam
-                            et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat
-                            amet</p>
+                        <p class="mb-5">Melalui platform ini, kami berkomitmen untuk menghadirkan perubahan nyata bagi mereka yang membutuhkan. Setiap donasi yang Anda berikan besar maupun kecil akan disalurkan secara transparan dan tepat sasaran untuk membantu pendidikan, kesehatan, dan kesejahteraan masyarakat. Bersama, kita bisa menciptakan dampak positif dan membangun masa depan yang lebih baik bagi banyak orang</p>
                         <a class="btn btn-primary py-2 px-3 me-3" href="">
                             Learn More
                             <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">

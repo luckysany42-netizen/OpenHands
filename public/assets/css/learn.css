@@ -1,0 +1,218 @@
+body {
+    background-color: #FFFFFF;
+}
+
+.content-box {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background: #FFF0E6;
+    padding: 40px 25px 25px; /* extra top padding for a title above the boxes */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin: 40px auto;
+    max-width: 1000px;
+    gap: 30px;
+    position: relative;
+}
+
+/* Title shown above the photo + text block */
+.content-title {
+    margin: 0 0 14px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #2b2b2b;
+}
+
+/* Wrapper for photo + text to keep them side-by-side */
+.content-wrapper {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start; /* don't force children to stretch; allow text to control its own height */
+    flex: 1;
+    position: relative; /* so title can be positioned relative to wrapper */
+}
+
+.content-photo {
+    width: 40%;
+    flex: 0 0 40%;
+    background: #FFFFFF;
+    border: none;
+    align-self: flex-start; /* keep photo at its intrinsic height and don't stretch */
+    border-radius: 10px;
+    position: relative; /* for absolute positioning of title */
+}
+
+.content-photo img {
+    width: 100%;
+    height: auto; /* let image maintain its own height until the box expands */
+    max-height: 280px; /* constrain very tall images so layout stays neat */
+    object-fit: cover;
+    display: block;
+    transition: height .28s ease, max-height .28s ease; /* smooth adjust when switching to 100% */
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* When the content-box has been expanded, make the wrapper stretch so photo matches text height */
+.content-box.expanded .content-wrapper {
+    align-items: stretch;
+}
+.content-box.expanded .content-photo {
+    align-self: stretch;
+}
+.content-box.expanded .content-photo img {
+    height: 100%;
+    max-height: none;
+    object-fit: cover;
+}
+
+/* Position the title at the top-right of the photo area */
+.content-photo .content-title {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    margin-left: 18px;
+    margin-top: 8px;
+    transform: none;
+    background: transparent;
+    font-size: 20px;
+    font-weight: 700;
+    color: #2b2b2b;
+    text-align: center;
+    white-space: normal;
+    width: 200px;
+    padding: 0 8px;
+}
+
+/* Responsive: on small screens stack title above everything */
+@media (max-width: 768px) {
+    .content-photo .content-title {
+        position: static;
+        margin: 0 0 12px 0;
+        display: block;
+    }
+}
+
+.content-text {
+    flex: 1;
+    background: #FDF7F4;
+    padding: 18px 22px;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #000000;
+    display: block; /* allow inner clamp to control height instead of stretching */
+    margin-top: 42px; /* spacing between title and text box */
+}
+
+/* Read more / truncation helpers */
+.content-text .content-text-inner {
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* limit to 3 lines */
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    /* fallback/use exact height clamp to ensure consistent behavior */
+    max-height: calc(1.6em * 3);
+}
+
+.content-text.expanded .content-text-inner {
+    -webkit-line-clamp: unset;
+    line-clamp: unset;
+    display: block;
+    max-height: none;
+}
+
+/* explicit collapsed state to ensure consistent initial layout */
+.content-text.collapsed .content-text-inner {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    max-height: calc(1.6em * 3);
+}
+
+/* Position read-more button inline at the end of text */
+.content-text-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 8px;
+}
+
+.read-more-btn {
+    background: transparent;
+    border: none;
+    color: #D3DAD9;
+    cursor: pointer;
+    font-weight: 600;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.read-more-btn:focus {
+    outline: none;
+}
+
+/* Donate Now inside content-box: full-width row under photo/text */
+.content-box .donate-now-wrapper {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    top: 100%;
+    transform: translateY(12px);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform .22s ease, opacity .18s ease;
+    z-index: 12;
+    display: flex;
+}
+.content-box .donate-now-wrapper .btn {
+    padding-left: 22px;
+    padding-right: 22px;
+}
+
+.content-box:hover .donate-now-wrapper {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+/* style the popup as a full-width bar with centered text and right arrow */
+.donate-now-wrapper .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    background: #ff6a00 !important;
+    color: #ffffff !important;
+    border-radius: 8px;
+    padding: 12px 18px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    font-weight: 700;
+}
+.donate-now-wrapper .btn .btn-sm-square {
+    width: 36px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff !important;
+    color: #ff6a00 !important;
+    border-radius: 50%;
+}
+
+/* push subsequent content down when popup appears */
+.content-box:hover ~ .content-box {
+    transform: translateY(64px);
+}
+.content-box {
+    transition: transform .18s ease;
+}

@@ -26,3 +26,6 @@ Route::get('team', [OurTeamController::class, 'index'])->name('team');
 Route::get('contact', [ContacController::class, 'index'])->name('contact');
 Route::get('service', [ServiceController::class, 'index'])->name('service');
 
+// Temporary learn page (copy of home) for "Learn More" buttons
+Route::view('learn', 'pages.learn')->name('learn');
+
