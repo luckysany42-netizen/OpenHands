@@ -43,16 +43,68 @@
                         </div>
                     </div>
                     <a href="{{ route('contact') }}" class="nav-item nav-link {{ request()->routeIs('contact') ? 'active' : '' }}">Contact</a>
-                </div>
-                <div class="d-none d-lg-flex ms-2">
-                    <a class="btn btn-outline-primary py-2 px-3" href="{{route('donate')}}">
-                        Donate Now
-                        <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
-                            <i class="fa fa-arrow-right"></i>
-                        </div>
-                    </a>
+               <div class="d-none d-lg-flex ms-2">
+
+   <div class="d-none d-lg-flex ms-2">
+
+    @auth
+    <!-- Dropdown Profil -->
+    <div class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle text-white d-flex align-items-center" 
+           data-bs-toggle="dropdown">
+
+            {{-- Avatar Inisial --}}
+            <div style="
+                height:35px;
+                width:35px;
+                border-radius:50%;
+                background:#4e73df;
+                color:white;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                font-weight:bold;
+                text-transform:uppercase;
+            ">
+                {{ substr(Auth::user()->name, 0, 1) }}
+            </div>
+
+            <span class="ms-2">{{ Auth::user()->name }}</span>
+        </a>
+
+        <div class="dropdown-menu dropdown-menu-end m-0">
+
+            <!-- Menu Profil -->
+            <a class="dropdown-item" href="#">
+                <i class="fa fa-user me-2"></i> Profil
+            </a>
+
+            <!-- Logout -->
+            <form action="{{ route('logout') }}" method="POST">
+                @csrf
+                <button type="submit" class="dropdown-item text-danger">
+                    <i class="fa fa-sign-out-alt me-2"></i> Logout
+                </button>
+            </form>
+
+        </div>
+    </div>
+@endauth
+
+
+@guest
+    <!-- Jika belum login -->
+    <a class="btn btn-outline-primary py-2 px-3" href="{{ route('login') }}">
+        Login Now
+        <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
+            <i class="fa fa-arrow-right"></i>
+        </div>
+    </a>
+@endguest
+
+</div>
                 </div>
             </div>
         </nav>
     </div>
-    <!-- Navbar End -->
+    <!-- Navbar End --> 

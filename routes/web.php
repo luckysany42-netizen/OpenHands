@@ -7,6 +7,7 @@ use App\Http\Controllers\DonateController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OurTeamController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -29,3 +30,15 @@ Route::get('service', [ServiceController::class, 'index'])->name('service');
 // Temporary learn page (copy of home) for "Learn More" buttons
 Route::view('learn', 'pages.learn')->name('learn');
 
+Route::get('/register', [AuthController::class, 'registerPage'])->name('register');
+Route::post('/register', [AuthController::class, 'register']);
+
+Route::get('/login', [AuthController::class, 'loginPage'])->name('login');
+Route::post('/login', [AuthController::class, 'login']);
+
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+// Protected route
+Route::get('/dashboard', function() {
+    return redirect()->route('home');
+})->middleware('auth');

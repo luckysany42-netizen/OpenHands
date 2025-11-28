@@ -5,24 +5,26 @@ body {
 .content-box {
     display: flex;
     align-items: stretch;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    background: #FFF0E6;
-    padding: 40px 25px 25px; /* extra top padding for a title above the boxes */
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    margin: 40px auto;
-    max-width: 1000px;
-    gap: 30px;
-    position: relative;
+    justify-content: space-between; 
+    flex-wrap: wrap; 
+    background: #FFF0E6; 
+    padding: 40px 25px 25px; /* extra top padding for a title above the boxes */ 
+    border-radius: 12px; 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
+    margin: 40px auto; 
+    max-width: 1000px; 
+    gap: 30px; 
+    position: relative; 
+    padding-top: 40px; 
 }
 
 /* Title shown above the photo + text block */
 .content-title {
     margin: 0 0 14px;
-    font-size: 20px;
+    font-size: 45px;
     font-weight: 700;
     color: #2b2b2b;
+    white-space: nowrap;
 }
 
 /* Wrapper for photo + text to keep them side-by-side */
@@ -77,11 +79,11 @@ body {
     margin-top: 8px;
     transform: none;
     background: transparent;
-    font-size: 20px;
+    font-size: 45px;
     font-weight: 700;
     color: #2b2b2b;
     text-align: center;
-    white-space: normal;
+    white-space: nowrap;
     width: 200px;
     padding: 0 8px;
 }
@@ -105,7 +107,7 @@ body {
     line-height: 1.6;
     color: #000000;
     display: block; /* allow inner clamp to control height instead of stretching */
-    margin-top: 42px; /* spacing between title and text box */
+    margin-top: 110px; /* spacing between title and text box */
 }
 
 /* Read more / truncation helpers */

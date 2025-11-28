@@ -1,4 +1,4 @@
-@extends('layouts.home')
+@extends('layouts.dashboard')
 
 @section('title')
     Learn More | OpenHands
