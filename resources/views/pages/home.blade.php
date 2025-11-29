@@ -31,10 +31,6 @@
                                 <div class="col-lg-7 pt-5">
                                     <h1 class="display-4 text-white mb-3 animated slideInDown">Dari Hati Untuk Sesama</h1>
                                     <p class="fs-5 text-white-50 mb-5 animated slideInDown">Donasi Anda memberi kesempatan baru bagi mereka yang sedang berjuang</p>
-                                    <a class="btn btn-primary py-2 px-3 animated slideInDown" href="{{ route('learn') }}">
-                                        Learn More
-                                        <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
-                                            <i class="fa fa-arrow-right"></i>
                                         </div>
                                     </a>
                                 </div>

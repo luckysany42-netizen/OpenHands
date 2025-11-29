@@ -446,3 +446,42 @@
 .footer .copyright a:hover {
     color: var(--primary);
 }
+.login-btn {
+    padding: 6px 16px;
+    font-size: 14px;
+    border: 2px solid #FF7A00;
+    border-radius: 8px;
+    color: #FF7A00;
+    display: flex;
+    align-items: center;
+    transition: .2s;
+}
+
+.login-btn:hover {
+    background: #FF7A00;
+    color: #fff;
+}
+
+.login-icon {
+    width: 28px;
+    height: 28px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-icon i {
+    color: #FF7A00 !important;
+}
+
+.login-btn:hover .login-icon i {
+    color: #FF7A00 !important;
+}
+
+.login-btn:active .login-icon i,
+.login-btn:focus .login-icon i {
+    color: #FF7A00 !important;
+}
+

@@ -29,7 +29,7 @@ class AuthController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        return redirect('/login')->with('success', 'Register berhasil!');
+        return redirect('/login')->with('success', 'Registrasi berhasil! Silakan login.');
     }
 
     // LOGIN
@@ -45,11 +45,18 @@ class AuthController extends Controller
             'password' => 'required'
         ]);
 
+        // Coba login
         if (Auth::attempt($request->only('email', 'password'))) {
-            return redirect('/dashboard');
+            $request->session()->regenerate();
+
+            return redirect()->route('home')
+                ->with('success', 'Login berhasil!');
         }
 
-        return back()->with('error', 'Email atau password salah!');
+        // Jika gagal login
+        return back()->withErrors([
+            'loginError' => 'Email atau password salah / akun tidak terdaftar.'
+        ])->withInput();
     }
 
     // LOGOUT
@@ -59,7 +66,6 @@ class AuthController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect('/login');
+        return redirect('/login')->with('success', 'Anda telah logout.');
     }
 }
-

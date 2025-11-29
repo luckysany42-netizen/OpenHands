@@ -9,6 +9,7 @@ use App\Http\Controllers\OurTeamController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProfileController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -42,3 +43,10 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/dashboard', function() {
     return redirect()->route('home');
 })->middleware('auth');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+    Route::post('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
+});
+
+Route::delete('/profile/delete', [ProfileController::class, 'destroy'])->name('profile.delete');
