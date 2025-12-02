@@ -35,7 +35,7 @@
                     <img class="img-fluid mb-4" src="assets/img/icon-1.png" alt="">
                     <h4 class="mb-3">Child Education</h4>
                     <p class="mb-4">Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed vero dolor duo.</p>
-                    <a class="btn btn-outline-primary px-3" href="">
+                    <a class="btn btn-outline-primary px-3" href="{{ auth()->check() ? route('target_route') : route('login') }}">
                         Learn More
                         <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
                             <i class="fa fa-arrow-right"></i>
@@ -48,7 +48,7 @@
                     <img class="img-fluid mb-4" src="assets/img/icon-2.png" alt="">
                     <h4 class="mb-3">Medical Treatment</h4>
                     <p class="mb-4">Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed vero dolor duo.</p>
-                    <a class="btn btn-outline-primary px-3" href="">
+                    <a class="btn btn-outline-primary px-3" href="{{ auth()->check() ? route('target_route') : route('login') }}">
                         Learn More
                         <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
                             <i class="fa fa-arrow-right"></i>
@@ -61,7 +61,7 @@
                     <img class="img-fluid mb-4" src="assets/img/icon-3.png" alt="">
                     <h4 class="mb-3">Pure Drinking Water</h4>
                     <p class="mb-4">Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed vero dolor duo.</p>
-                    <a class="btn btn-outline-primary px-3" href="">
+                    <a class="btn btn-outline-primary px-3" href="{{ auth()->check() ? route('target_route') : route('login') }}">
                         Learn More
                         <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
                             <i class="fa fa-arrow-right"></i>

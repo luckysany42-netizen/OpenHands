@@ -17,6 +17,31 @@
                                 <div class="col-lg-7 pt-5">
                                     <h1 class="display-4 text-white mb-3 animated slideInDown">Dari Hati Untuk Sesama</h1>
                                     <p class="fs-5 text-white-50 mb-5 animated slideInDown">Kami menghubungkan niat baik Anda dengan mereka yang membutuhkan bantuan paling mendesak</p>
+                                    <div class="text-center mt-4">
+                                            <a href="{{ auth()->check() ? route('donate') : route('login') }}"
+                                            class="btn px-5 py-3 rounded-pill fw-bold"
+                                            style="
+                                                    font-size: 20px;
+                                                    background: #FF7A00;
+                                                    color: #fff;
+                                                    border: none;
+                                                    transition: .3s;
+                                                    box-shadow: 0 0 18px rgba(255,122,0,0.4);
+                                            ">
+                                                Donate Now
+                                                <span class="ms-2 d-inline-flex rounded-circle"
+                                                    style="
+                                                            width:32px;
+                                                            height:32px;
+                                                            background:white;
+                                                            color:#FF7A00;
+                                                            align-items:center;
+                                                            justify-content:center;
+                                                    ">
+                                                    <i class="fa fa-arrow-right"></i>
+                                                </span>
+                                            </a>
+                                        </div>
                                     </a>
                                 </div>
                             </div>
@@ -29,8 +54,35 @@
                         <div class="container">
                             <div class="row justify-content-center">
                                 <div class="col-lg-7 pt-5">
-                                    <h1 class="display-4 text-white mb-3 animated slideInDown">Dari Hati Untuk Sesama</h1>
+                                    <h1 class="display-4 text-white mb-3 animated slideInDown">Bersama Kita Hadirkan Harapan</h1>
                                     <p class="fs-5 text-white-50 mb-5 animated slideInDown">Donasi Anda memberi kesempatan baru bagi mereka yang sedang berjuang</p>
+                                    <div class="text-center mt-4">
+                                                <a href="{{ auth()->check() ? route('donate') : route('login') }}"
+                                                class="btn px-5 py-3 rounded-pill fw-bold"
+                                                style="
+                                                        font-size: 20px;
+                                                        background: #FF7A00;
+                                                        color: #fff;
+                                                        border: none;
+                                                        transition: .3s;
+                                                        box-shadow: 0 0 18px rgba(255,122,0,0.4);
+                                                ">
+
+                                                    Donate Now
+
+                                                    <span class="ms-2 d-inline-flex rounded-circle"
+                                                        style="
+                                                                width:32px;
+                                                                height:32px;
+                                                                background:white;
+                                                                color:#FF7A00;
+                                                                align-items:center;
+                                                                justify-content:center;
+                                                        ">
+                                                        <i class="fa fa-arrow-right"></i>
+                                                    </span>
+                                                </a>
+                                            </div>
                                         </div>
                                     </a>
                                 </div>
@@ -72,13 +124,14 @@
                             <p class="text-dark mb-2">Dengan kontribusi kecil, Anda ikut membangun masa depan yang lebih baik untuk banyak orang</p>
                             <span class="text-primary">Lucky Meirino Sany, Founder</span>
                         </div>
-                        <p class="mb-5">Melalui platform ini, kami berkomitmen untuk menghadirkan perubahan nyata bagi mereka yang membutuhkan. Setiap donasi yang Anda berikan besar maupun kecil akan disalurkan secara transparan dan tepat sasaran untuk membantu pendidikan, kesehatan, dan kesejahteraan masyarakat. Bersama, kita bisa menciptakan dampak positif dan membangun masa depan yang lebih baik bagi banyak orang</p>
-                        <a class="btn btn-primary py-2 px-3 me-3" href="{{ route('learn') }}">
-                            Learn More
-                            <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
-                                <i class="fa fa-arrow-right"></i>
+                        <a href="{{ auth()->check() ? route('learn') : route('login') }}"
+                            class="btn btn-primary d-inline-flex align-items-center py-2 px-4">Learn More
+
+                            <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-3">
+                            <i class="fa fa-arrow-right"></i>
                             </div>
                         </a>
+
                         <a class="btn btn-outline-primary py-2 px-3" href="/contact">
                             Contact Us
                             <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
@@ -126,7 +179,7 @@
                             <div class="position-relative mt-auto">
                                 <img class="img-fluid" src="{{Storage::url($item->photos)}}" alt="">
                                 <div class="causes-overlay">
-                                    <a class="btn btn-outline-primary" href="">
+                                    <a class="btn btn-outline-primary" href="{{ auth()->check() ? route('learn') : route('login') }}">
                                         Read More
                                         <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
                                             <i class="fa fa-arrow-right"></i>
@@ -157,7 +210,7 @@
                         <h4 class="mb-3">Child Education</h4>
                         <p class="mb-4">Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed vero
                             dolor duo.</p>
-                        <a class="btn btn-outline-primary px-3" href="{{ route('learn') }}">
+                        <a class="btn btn-outline-primary px-3" href="{{ auth()->check() ? route('learn') : route('login') }}">
                             Learn More
                             <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
                                 <i class="fa fa-arrow-right"></i>
@@ -171,7 +224,7 @@
                         <h4 class="mb-3">Medical Treatment</h4>
                         <p class="mb-4">Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed vero
                             dolor duo.</p>
-                        <a class="btn btn-outline-primary px-3" href="{{ route('learn') }}">
+                        <a class="btn btn-outline-primary px-3" href="{{ auth()->check() ? route('learn') : route('login') }}">
                             Learn More
                             <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
                                 <i class="fa fa-arrow-right"></i>
@@ -185,7 +238,7 @@
                         <h4 class="mb-3">Pure Drinking Water</h4>
                         <p class="mb-4">Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed vero
                             dolor duo.</p>
-                        <a class="btn btn-outline-primary px-3" href="{{ route('learn') }}">
+                        <a class="btn btn-outline-primary px-3" href="{{ auth()->check() ? route('learn') : route('login') }}">
                             Learn More
                             <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
                                 <i class="fa fa-arrow-right"></i>
