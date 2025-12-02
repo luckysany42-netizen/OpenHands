@@ -8,23 +8,28 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Transaction extends Model
 {
-    // use HasFactory;
-
     use SoftDeletes;
 
     protected $fillable = [
-        'products_id', 
-        'username', 
+        'products_id',
+        'user_id',      // 🟩 ditambahkan untuk relasi user
+        'username',
         'email',
-        'description', 
-        'description', 
-        'donate_price', 
+        'description',
+        'donate_price',
     ];
 
     protected $hidden = [];
 
+    // Relasi ke tabel product
     public function product()
     {
         return $this->belongsTo(Product::class, 'products_id', 'id');
+    }
+
+    // 🟩 Relasi ke user (penting untuk history donasi per user)
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id', 'id');
     }
 }

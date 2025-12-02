@@ -52,22 +52,30 @@
 
                 <!-- Dropdown Pages -->
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle 
-                        {{ (request()->routeIs('service') || request()->routeIs('donate') || request()->routeIs('team')) ? 'active' : '' }}" 
-                        data-bs-toggle="dropdown">
-                        Pages
-                    </a>
-                    <div class="dropdown-menu m-0">
-                        <a href="{{ route('service') }}" 
-                           class="dropdown-item {{ request()->routeIs('service') ? 'active' : '' }}">Service</a>
+    <a href="#" class="nav-link dropdown-toggle 
+        {{ (request()->routeIs('service') || request()->routeIs('donate') || request()->routeIs('team') || request()->routeIs('donate.history')) ? 'active' : '' }}" 
+        data-bs-toggle="dropdown">
+        Menu
+    </a>
 
-                        <a href="{{ route('donate') }}" 
-                           class="dropdown-item {{ request()->routeIs('donate') ? 'active' : '' }}">Donate</a>
+    <div class="dropdown-menu m-0">
+        <a href="{{ route('service') }}" 
+           class="dropdown-item {{ request()->routeIs('service') ? 'active' : '' }}">Service</a>
 
-                        <a href="{{ route('team') }}" 
-                           class="dropdown-item {{ request()->routeIs('team') ? 'active' : '' }}">Our Team</a>
-                    </div>
-                </div>
+        <a href="{{ route('donate') }}" 
+           class="dropdown-item {{ request()->routeIs('donate') ? 'active' : '' }}">Donate</a>
+
+        <a href="{{ route('team') }}" 
+           class="dropdown-item {{ request()->routeIs('team') ? 'active' : '' }}">Our Team</a>
+
+        <!-- FIXED: Riwayat Donasi -->
+        <a href="{{ route('donate.history') }}" 
+           class="dropdown-item {{ request()->routeIs('donate.history') ? 'active' : '' }}">
+           Riwayat Donasi
+        </a>
+    </div>
+</div>
+
 
                 <a href="{{ route('contact') }}" 
                    class="nav-item nav-link {{ request()->routeIs('contact') ? 'active' : '' }}">Contact</a>

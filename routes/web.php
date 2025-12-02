@@ -11,24 +11,25 @@ use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('about', [AboutController::class, 'index'])->name('about');
 Route::get('causes', [CausesController::class, 'index'])->name('causes');
 
+// --- DONATION ROUTES ---
 Route::get('donation', [DonateController::class, 'index'])->name('donate');
-Route::post('donation/store', [DonateController::class, 'store'])->name('donate.store');
-Route::get('/success', [DonateController::class, 'success'])->name('success');
 
+// Wajib login sebelum submit donasi
+Route::post('donation/store', [DonateController::class, 'store'])
+    ->middleware('auth')
+    ->name('donate.store');
+
+Route::get('/success', [DonateController::class, 'success'])->name('success');
+// --- END DONATION ROUTES ---
 
 Route::get('team', [OurTeamController::class, 'index'])->name('team');
 Route::get('contact', [ContacController::class, 'index'])->name('contact');
 Route::get('service', [ServiceController::class, 'index'])->name('service');
 
-// Temporary learn page (copy of home) for "Learn More" buttons
 Route::view('learn', 'pages.learn')->name('learn');
 
 Route::get('/register', [AuthController::class, 'registerPage'])->name('register');
@@ -39,7 +40,6 @@ Route::post('/login', [AuthController::class, 'login']);
 
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-// Protected route
 Route::get('/dashboard', function() {
     return redirect()->route('home');
 })->middleware('auth');
@@ -50,3 +50,8 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::delete('/profile/delete', [ProfileController::class, 'destroy'])->name('profile.delete');
+
+Route::get('/donations/history', [DonateController::class, 'history'])
+    ->middleware('auth')
+    ->name('donate.history');
+

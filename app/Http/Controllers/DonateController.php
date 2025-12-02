@@ -20,15 +20,24 @@ class DonateController extends Controller
 
     public function store(TransactionRequest $request)
     {
+        // 🔒 Cek apakah user sudah login
+        if (!auth()->check()) {
+            return redirect()->route('login')
+                ->with('error', 'Kamu harus login terlebih dahulu sebelum melakukan donasi.');
+        }
+
         $data = $request->all();
+        $data['user_id'] = auth()->id();
  
         $product = Product::findOrFail($data['products_id']);
+
         if ($product->current_price !== null) {
             $product->current_price += $data['donate_price'];
         } else {
             $product->current_price = $data['donate_price'];
         }
-            $product->save();
+
+        $product->save();
 
         Transaction::create($data);
 
@@ -39,4 +48,15 @@ class DonateController extends Controller
     {
         return view('pages.success');
     }
+
+    public function history()
+{
+    $transactions = Transaction::with('product')
+        ->where('user_id', auth()->id())
+        ->latest()
+        ->get();
+
+    return view('pages.history', compact('transactions'));
+}
+
 }

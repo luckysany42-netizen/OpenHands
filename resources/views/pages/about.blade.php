@@ -42,18 +42,23 @@
                             <span class="text-primary">Lucky Meirino Sany, Founder</span>
                         </div>
                         <p class="mb-5">Melalui platform ini, kami berkomitmen untuk menghadirkan perubahan nyata bagi mereka yang membutuhkan. Setiap donasi yang Anda berikan besar maupun kecil akan disalurkan secara transparan dan tepat sasaran untuk membantu pendidikan, kesehatan, dan kesejahteraan masyarakat. Bersama, kita bisa menciptakan dampak positif dan membangun masa depan yang lebih baik bagi banyak orang</p>
-                        <a class="btn btn-primary py-2 px-3 me-3" href="{{ auth()->check() ? route('target_route') : route('login') }}">
+
+                        <!-- FIXED: Learn More -->
+                        <a class="btn btn-primary py-2 px-3 me-3" href="{{ auth()->check() ? route('learn') : route('login') }}">
                             Learn More
                             <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
                                 <i class="fa fa-arrow-right"></i>
                             </div>
                         </a>
-                        <a class="btn btn-outline-primary py-2 px-3" href="{{ auth()->check() ? route('target_route') : route('login') }}">
+
+                        <!-- FIXED: Contact Us -->
+                        <a class="btn btn-outline-primary py-2 px-3" href="{{ auth()->check() ? route('contact') : route('login') }}">
                             Contact Us
                             <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
                                 <i class="fa fa-arrow-right"></i>
                             </div>
                         </a>
+
                     </div>
                 </div>
             </div>
