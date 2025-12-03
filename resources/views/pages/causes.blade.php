@@ -59,12 +59,13 @@
                             <div class="position-relative mt-auto">
                                 <img class="img-fluid" src="{{Storage::url($item->photos)}}" alt="">
                                 <div class="causes-overlay">
-                                    <a class="btn btn-outline-primary" href="{{ auth()->check() ? route('learn') : route('login') }}">
-                                        Read More
-                                        <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
-                                            <i class="fa fa-arrow-right"></i>
-                                        </div>
-                                    </a>
+                                    <a class="btn-readmore-learn card-readmore"
+                                        href="{{ auth()->check() ? route('learn', $item->id) : route('login') }}">
+                                            Read More
+                                            <span class="icon-circle">
+                                                <i class="fa fa-arrow-right"></i>
+                                            </span>
+                                        </a>
                                 </div>
                             </div>
                         </div>

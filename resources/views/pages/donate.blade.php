@@ -34,31 +34,59 @@
                     <div class="h-100 bg-secondary p-5">
                         <form method="post" action="{{route('donate.store')}}" enctype="multipart/form-data">
                             @csrf
+                                    <div class="row g-3">
+                            <div class="col-12">
+                                <div class="form-floating mb-3">
+                                    <input type="text"
+                                        class="form-control bg-light border-0 shadow-sm"
+                                        name="username"
+                                        id="username"
+                                        placeholder="Your Name"
+                                        value="{{ auth()->check() ? auth()->user()->name : '' }}"
+                                        {{ auth()->check() ? 'readonly' : '' }}
+                                        required>
+                                    <label for="username">Your Name</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating mb-4">
+                                    <input type="email"
+                                        class="form-control bg-light border-0 shadow-sm"
+                                        name="email"
+                                        id="email"
+                                        placeholder="Your Email"
+                                        value="{{ auth()->check() ? auth()->user()->email : '' }}"
+                                        {{ auth()->check() ? 'readonly' : '' }}
+                                        required>
+                                    <label for="email">Your Email</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating mb-3" style="border-radius: 10px; overflow: hidden;">
+                                    <select id="category_id" name="category_id"
+                                        class="form-control bg-light border-0 shadow-sm"
+                                        style="height: 58px;">
+                                        @foreach ($categories as $category)
+                                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                        @endforeach
+                                    </select>
+                                    <label for="category_id">Choose Category</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating mb-3" style="border-radius: 10px; overflow: hidden;">
+                                    <select id="products_id" name="products_id"
+                                        class="form-control bg-light border-0 shadow-sm"
+                                        style="height: 58px;">
+                                        @foreach ($product as $item)
+                                            <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                        @endforeach
+                                    </select>
+                                    <label for="products_id">Choose Campaign</label>
+                                </div>
+                            </div>
+                        </div>
 
-                            <div class="row g-3">
-                                <div class="col-12">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control bg-light border-0" name="username" id="username" placeholder="Your Name" required>
-                                        <label for="name">Your Name</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-floating">
-                                        <input type="email" class="form-control bg-light border-0" name="email" id="email" placeholder="Your Email" required>
-                                        <label for="email">Your Email</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-floating">
-                                        <select id="products_id" name="products_id"
-                                            class="form-control bg-light border-0" style="padding-top: 0 !important; padding-bottom: 0 !important">
-                                            <option value="">Choose Campaign</option>
-                                            @foreach ($product as $item)
-                                                <option value="{{ $item->id }}">{{ $item->name }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
                                 <div class="col-12">
                                     <div class="btn-group d-flex justify-content-around">
                                         <input type="radio" class="btn-check" name="donate_price" id="donate_price1" value="10000" checked>

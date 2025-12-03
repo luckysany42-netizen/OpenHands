@@ -485,3 +485,77 @@
     color: #FF7A00 !important;
 }
 
+/* Wrapper button full width */
+.btn-readmore-learn {
+    width: 100%;
+    background-color: #ff7000; /* Orange */
+    color: white;
+    font-weight: 600;
+    padding: 14px 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    box-shadow: 0px 8px 20px rgba(255, 112, 0, 0.35);
+    transition: all .25s ease; /* lebih cepat */
+    gap: 12px;
+
+    /* DITAMBAHKAN → efek pop-up */
+    transform: translateY(0);
+}
+
+/* Icon bulat */
+.btn-readmore-learn .icon-circle {
+    width: 36px;
+    height: 36px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .25s ease;
+}
+
+.btn-readmore-learn .icon-circle i {
+    color: #ff7000;
+    transition: all .25s ease;
+}
+
+/* HOVER EFFECT */
+.btn-readmore-learn:hover {
+    background-color: white;
+    color: #ff7000;
+    border: 2px solid #ff7000;
+
+    /* DITAMBAHKAN → tombol naik ke atas */
+    transform: translateY(-4px);
+
+    /* DITAMBAHKAN → shadow membesar */
+    box-shadow: 0px 14px 28px rgba(255, 112, 0, 0.55);
+}
+
+.btn-readmore-learn:hover .icon-circle {
+    background-color: #ff7000;
+}
+
+.btn-readmore-learn:hover .icon-circle i {
+    color: white;
+}
+
+/* Tombol read more disembunyikan dulu */
+.card-readmore {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: all .35s ease;
+    pointer-events: none;
+}
+
+/* Saat card di-hover → tombol muncul */
+/* INI FIX PENTING */
+.causes-item:hover .card-readmore {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+

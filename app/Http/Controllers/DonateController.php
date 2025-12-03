@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\TransactionRequest;
 use App\Models\Product;
+use App\Models\Category;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
 
@@ -11,10 +12,13 @@ class DonateController extends Controller
 {
     public function index()
     {
+        // Ambil semua campaign/product dan category untuk view donate
         $product = Product::all();
+        $categories = Category::all();
 
         return view('pages.donate', [
-            'product' => $product
+            'product' => $product,
+            'categories' => $categories,
         ]);
     }
 
@@ -50,13 +54,12 @@ class DonateController extends Controller
     }
 
     public function history()
-{
-    $transactions = Transaction::with('product')
-        ->where('user_id', auth()->id())
-        ->latest()
-        ->get();
+    {
+        $transactions = Transaction::with('product')
+            ->where('user_id', auth()->id())
+            ->latest()
+            ->get();
 
-    return view('pages.history', compact('transactions'));
-}
-
+        return view('pages.history', compact('transactions'));
+    }
 }

@@ -10,12 +10,14 @@ class HomeController extends Controller
 {
     public function index() 
     {
-        $categories = Category::get();
-        $products = Product::with(['category'])->get();
+        $categories = Category::all();
+        $product = Product::all(); 
+        $products = Product::with(['category'])->get(); 
 
         return view('pages.home', [
             'categories' => $categories,
-            'products'    => $products
+            'product' => $product,
+            'products' => $products,
         ]);
     }
 }

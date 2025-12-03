@@ -8,6 +8,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OurTeamController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\LearnController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 
@@ -55,3 +56,5 @@ Route::get('/donations/history', [DonateController::class, 'history'])
     ->middleware('auth')
     ->name('donate.history');
 
+Route::get('/learn/{id}', [LearnController::class, 'show'])
+    ->name('learn');
