@@ -101,8 +101,8 @@
                             <span class="text-primary">Lucky Meirino Sany, Founder</span>
                         </div>
 
-                        <!-- Learn More -->
-                        <a href="{{ auth()->check() ? route('learn') : route('login') }}" class="btn btn-primary d-inline-flex align-items-center py-2 px-4">
+                        <!-- FIXED: Learn More harus pakai parameter id (default 1 untuk halaman non-item) -->
+                        <a href="{{ auth()->check() ? route('learn', 1) : route('login') }}" class="btn btn-primary d-inline-flex align-items-center py-2 px-4">
                             Learn More
                             <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-3">
                                 <i class="fa fa-arrow-right"></i>
@@ -134,8 +134,9 @@
 
             <div class="row g-4 justify-content-center">
                 @foreach ($products as $item)
-                    <div class="col-lg-4 col-md-6 wow fadeInUp">
-                        <div class="causes-item d-flex flex-column bg-white border-top border-5 border-primary rounded-top h-100">
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="causes-item d-flex flex-column bg-white border-top border-5 border-primary rounded-top overflow-hidden h-100">
+
                             <div class="text-center p-4 pt-0">
                                 <div class="d-inline-block bg-primary text-white rounded-bottom fs-5 pb-1 px-3 mb-4">
                                     <small>{{ $item->category->name }}</small>
@@ -146,29 +147,37 @@
 
                                 <div class="causes-progress bg-light p-3 pt-2">
                                     <div class="d-flex justify-content-between">
-                                        <p class="text-dark">{{ number_format($item->goal_price) }} <small>Goal</small></p>
-                                        <p class="text-dark">{{ number_format($item->current_price) }} <small>Raised</small></p>
+                                        <p class="text-dark">{{ number_format($item->goal_price) }} <small class="text-body">Goal</small></p>
+                                        <p class="text-dark">{{ number_format($item->current_price) }} <small class="text-body">Raised</small></p>
                                     </div>
+
                                     <div class="progress">
-                                        <div class="progress-bar" style="width: {{ $item->goal_price ? (($item->current_price / $item->goal_price) * 100) : 0 }}%;">
+                                        <div class="progress-bar" role="progressbar"
+                                            style="width: {{ $item->goal_price ? ($item->current_price / $item->goal_price * 100) : 0 }}%;"
+                                            aria-valuenow="{{ $item->goal_price ? ($item->current_price / $item->goal_price * 100) : 0 }}"
+                                            aria-valuemin="0" aria-valuemax="100">
                                             <span>{{ $item->goal_price ? round(($item->current_price / $item->goal_price) * 100) : 0 }}%</span>
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
 
                             <div class="position-relative mt-auto">
                                 @if($item->photos)
-                                    <img class="img-fluid" src="{{ Storage::url($item->photos) }}" alt="">
+                                    <img class="img-fluid" src="{{ Storage::url($item->photos) }}" alt="{{ $item->name }}">
                                 @endif
                                 <div class="causes-overlay">
                                     <a class="btn-readmore-learn card-readmore"
                                        href="{{ auth()->check() ? route('learn', $item->id) : route('login') }}">
                                         Read More
-                                        <span class="icon-circle"><i class="fa fa-arrow-right"></i></span>
+                                        <span class="icon-circle">
+                                            <i class="fa fa-arrow-right"></i>
+                                        </span>
                                     </a>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 @endforeach
@@ -191,7 +200,7 @@
                         <img class="img-fluid mb-4" src="assets/img/icon-1.png" alt="">
                         <h4 class="mb-3">Child Education</h4>
                         <p class="mb-4">Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed vero dolor duo.</p>
-                        <a class="btn btn-outline-primary px-3" href="{{ auth()->check() ? route('learn') : route('login') }}">
+                        <a class="btn btn-outline-primary px-3" href="{{ auth()->check() ? route('learn', 1) : route('login') }}">
                             Learn More
                             <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
                                 <i class="fa fa-arrow-right"></i>
@@ -204,7 +213,7 @@
                         <img class="img-fluid mb-4" src="assets/img/icon-2.png" alt="">
                         <h4 class="mb-3">Medical Treatment</h4>
                         <p class="mb-4">Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed vero dolor duo.</p>
-                        <a class="btn btn-outline-primary px-3" href="{{ auth()->check() ? route('learn') : route('login') }}">
+                        <a class="btn btn-outline-primary px-3" href="{{ auth()->check() ? route('learn', 1) : route('login') }}">
                             Learn More
                             <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
                                 <i class="fa fa-arrow-right"></i>
@@ -217,7 +226,7 @@
                         <img class="img-fluid mb-4" src="assets/img/icon-3.png" alt="">
                         <h4 class="mb-3">Pure Drinking Water</h4>
                         <p class="mb-4">Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed vero dolor duo.</p>
-                        <a class="btn btn-outline-primary px-3" href="{{ auth()->check() ? route('learn') : route('login') }}">
+                        <a class="btn btn-outline-primary px-3" href="{{ auth()->check() ? route('learn', 1) : route('login') }}">
                             Learn More
                             <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
                                 <i class="fa fa-arrow-right"></i>
@@ -244,66 +253,57 @@
                         <form method="post" action="{{route('donate.store')}}" enctype="multipart/form-data">
                             @csrf
 
-                            <div class="row g-3">
-
-                                {{-- NAME --}}
-                                <div class="col-12">
-                                    <div class="form-floating mb-3">
-                                        <input type="text"
-                                            class="form-control bg-light border-0 shadow-sm"
-                                            name="username"
-                                            id="username"
-                                            placeholder="Your Name"
-                                            value="{{ auth()->check() ? auth()->user()->name : '' }}"
-                                            {{ auth()->check() ? 'readonly' : '' }}
-                                            required>
-                                        <label for="username">Your Name</label>
-                                    </div>
+                                                     <div class="row g-3">
+                            <div class="col-12">
+                                <div class="form-floating mb-3">
+                                    <input type="text"
+                                        class="form-control bg-light border-0 shadow-sm"
+                                        name="username"
+                                        id="username"
+                                        placeholder="Your Name"
+                                        value="{{ auth()->check() ? auth()->user()->name : '' }}"
+                                        {{ auth()->check() ? 'readonly' : '' }}
+                                        required>
+                                    <label for="username">Your Name</label>
                                 </div>
-
-                                {{-- EMAIL --}}
-                                <div class="col-12">
-                                    <div class="form-floating mb-4">
-                                        <input type="email"
-                                            class="form-control bg-light border-0 shadow-sm"
-                                            name="email"
-                                            id="email"
-                                            placeholder="Your Email"
-                                            value="{{ auth()->check() ? auth()->user()->email : '' }}"
-                                            {{ auth()->check() ? 'readonly' : '' }}
-                                            required>
-                                        <label for="email">Your Email</label>
-                                    </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating mb-4">
+                                    <input type="email"
+                                        class="form-control bg-light border-0 shadow-sm"
+                                        name="email"
+                                        id="email"
+                                        placeholder="Your Email"
+                                        value="{{ auth()->check() ? auth()->user()->email : '' }}"
+                                        {{ auth()->check() ? 'readonly' : '' }}
+                                        required>
+                                    <label for="email">Your Email</label>
                                 </div>
-
-                                {{-- CATEGORY --}}
-                                <div class="col-12">
-                                    <div class="form-floating mb-3" style="border-radius: 10px; overflow: hidden;">
-                                        <select id="category_id" name="category_id"
-                                            class="form-control bg-light border-0 shadow-sm"
-                                            style="height: 58px;">
-                                            @foreach ($categories as $category)
-                                                <option value="{{ $category->id }}">{{ $category->name }}</option>
-                                            @endforeach
-                                        </select>
-                                        <label for="category_id">Choose Category</label>
-                                    </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating mb-3" style="border-radius: 10px; overflow: hidden;">
+                                    <select id="category_id" name="category_id"
+                                        class="form-control bg-light border-0 shadow-sm"
+                                        style="height: 58px;">
+                                        @foreach ($categories as $category)
+                                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                        @endforeach
+                                    </select>
+                                    <label for="category_id">Choose Category</label>
                                 </div>
-
-                                {{-- CAMPAIGN --}}
-                                <div class="col-12">
-                                    <div class="form-floating mb-3" style="border-radius: 10px; overflow: hidden;">
-                                        <select id="products_id" name="products_id"
-                                            class="form-control bg-light border-0 shadow-sm"
-                                            style="height: 58px;">
-                                            @foreach ($product as $item)
-                                                <option value="{{ $item->id }}">{{ $item->name }}</option>
-                                            @endforeach
-                                        </select>
-                                        <label for="products_id">Choose Campaign</label>
-                                    </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating mb-3" style="border-radius: 10px; overflow: hidden;">
+                                    <select id="products_id" name="products_id"
+                                        class="form-control bg-light border-0 shadow-sm"
+                                        style="height: 58px;">
+                                        @foreach ($product as $item)
+                                            <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                        @endforeach
+                                    </select>
+                                    <label for="products_id">Choose Campaign</label>
                                 </div>
-
+                            </div>
                                 <div class="col-12">
                                     <div class="btn-group d-flex justify-content-around">
                                         <input type="radio" class="btn-check" name="donate_price" id="donate_price1" value="10000" checked>
@@ -316,7 +316,6 @@
                                         <label class="btn btn-light py-3" for="donate_price3">Rp.30.000</label>
                                     </div>
                                 </div>
-
                                 <div class="col-12">
                                     <button class="btn btn-primary px-5" style="height: 60px;">
                                         Donate Now
@@ -325,7 +324,6 @@
                                         </div>
                                     </button>
                                 </div>
-
                             </div>
                         </form>
                     </div>
@@ -335,42 +333,35 @@
     </div>
     <!-- Donate End -->
 
-    <!-- Team Start -->
+        <!-- Team Start -->
     <div class="container-xxl py-5">
         <div class="container">
-            <div class="text-center mx-auto mb-5 wow fadeInUp" style="max-width: 500px;">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
                 <div class="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3">Team Members</div>
                 <h1 class="display-6 mb-5">Let's Meet With Our Ordinary Soldiers</h1>
             </div>
-            <div class="row g-4">
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="team-item position-relative rounded overflow-hidden">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="assets/img/team-1.jpg" alt="">
-                        </div>
-                        <div class="team-text bg-light text-center p-4">
-                            <h5>Lucky Meirino S</h5>
-                            <p class="text-primary">Founder</p>
-                            <div class="team-social text-center">
-                                <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+            <div class="row g-4 justify-content-center">
+
+                {{-- Team Member 1 --}}
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="team-item position-relative rounded overflow-hidden">
                         <div class="overflow-hidden">
                             <img class="img-fluid" src="assets/img/team-2.jpg" alt="">
                         </div>
                         <div class="team-text bg-light text-center p-4">
-                            <h5>M Hendry Risky F</h5>
-                            <p class="text-primary">Planner</p>
+                            <h5>Full Name</h5>
+                            <p class="text-primary">Designation</p>
                             <div class="team-social text-center">
-                                <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
+                                <a class="btn btn-square" href=""><i class="fab fa-whatsapp"></i></a>
+                                <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                {{-- Team Member 2 --}}
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="team-item position-relative rounded overflow-hidden">
                         <div class="overflow-hidden">
@@ -380,28 +371,18 @@
                             <h5>Full Name</h5>
                             <p class="text-primary">Designation</p>
                             <div class="team-social text-center">
+                               <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
                                 <a class="btn btn-square" href=""><i class="fab fa-whatsapp"></i></a>
+                                <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="team-item position-relative rounded overflow-hidden">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="assets/img/team-4.jpg" alt="">
-                        </div>
-                        <div class="team-text bg-light text-center p-4">
-                            <h5>Full Name</h5>
-                            <p class="text-primary">Designation</p>
-                            <div class="team-social text-center">
-                                <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
     </div>
+    <!-- Team End -->
 
     <!-- Testimonial Start -->
     <div class="container-xxl py-5">
