@@ -52,30 +52,27 @@
 
                 <!-- Dropdown Pages -->
                 <div class="nav-item dropdown">
-    <a href="#" class="nav-link dropdown-toggle 
-        {{ (request()->routeIs('service') || request()->routeIs('donate') || request()->routeIs('team') || request()->routeIs('donate.history')) ? 'active' : '' }}" 
-        data-bs-toggle="dropdown">
-        Menu
-    </a>
+                    <a href="#" class="nav-link dropdown-toggle 
+                        {{ (request()->routeIs('service') || request()->routeIs('donate') || request()->routeIs('donate.history')) ? 'active' : '' }}" 
+                        data-bs-toggle="dropdown">
+                        Menu
+                    </a>
 
-    <div class="dropdown-menu m-0">
-        <a href="{{ route('service') }}" 
-           class="dropdown-item {{ request()->routeIs('service') ? 'active' : '' }}">Service</a>
+                    <div class="dropdown-menu m-0">
+                        <a href="{{ route('service') }}" 
+                           class="dropdown-item {{ request()->routeIs('service') ? 'active' : '' }}">Service</a>
 
-        <a href="{{ route('donate') }}" 
-           class="dropdown-item {{ request()->routeIs('donate') ? 'active' : '' }}">Donate</a>
+                        <a href="{{ route('donate') }}" 
+                           class="dropdown-item {{ request()->routeIs('donate') ? 'active' : '' }}">Donate</a>
 
-        <a href="{{ route('team') }}" 
-           class="dropdown-item {{ request()->routeIs('team') ? 'active' : '' }}">Our Team</a>
+                        <!-- Our Team dihapus di sini -->
 
-        <!-- FIXED: Riwayat Donasi -->
-        <a href="{{ route('donate.history') }}" 
-           class="dropdown-item {{ request()->routeIs('donate.history') ? 'active' : '' }}">
-           Riwayat Donasi
-        </a>
-    </div>
-</div>
-
+                        <a href="{{ route('donate.history') }}" 
+                           class="dropdown-item {{ request()->routeIs('donate.history') ? 'active' : '' }}">
+                           Riwayat Donasi
+                        </a>
+                    </div>
+                </div>
 
                 <a href="{{ route('contact') }}" 
                    class="nav-item nav-link {{ request()->routeIs('contact') ? 'active' : '' }}">Contact</a>
@@ -84,11 +81,11 @@
                 <div class="d-none d-lg-flex ms-2">
 
                     @guest
-                <a class="login-btn" href="{{ route('login') }}">
-                            Login Now
-                <div class="login-icon ms-2">
-                    <i class="fa fa-arrow-right"></i>
-                </div>
+                    <a class="login-btn" href="{{ route('login') }}">
+                        Login Now
+                        <div class="login-icon ms-2">
+                            <i class="fa fa-arrow-right"></i>
+                        </div>
                     </a>
                     @endguest
 
@@ -97,7 +94,6 @@
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle text-white d-flex align-items-center" data-bs-toggle="dropdown">
 
-                                <!-- Avatar (initial) -->
                                 @if(Auth::user()->photo)
                                     <img src="{{ asset('profile_photos/' . Auth::user()->photo) }}" 
                                         style="height:35px; width:35px; border-radius:50%; object-fit:cover;">
@@ -110,6 +106,7 @@
                                         {{ strtoupper(substr(Auth::user()->name, 0, 1)) }}
                                     </div>
                                 @endif
+
                                 <span class="ms-2">{{ Auth::user()->name }}</span>
                             </a>
 

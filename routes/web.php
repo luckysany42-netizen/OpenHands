@@ -9,6 +9,7 @@ use App\Http\Controllers\OurTeamController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\LearnController;
+use App\Http\Controllers\PaymentController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 
@@ -27,7 +28,6 @@ Route::post('donation/store', [DonateController::class, 'store'])
 Route::get('/success', [DonateController::class, 'success'])->name('success');
 // --- END DONATION ROUTES ---
 
-Route::get('team', [OurTeamController::class, 'index'])->name('team');
 Route::get('contact', [ContacController::class, 'index'])->name('contact');
 Route::get('service', [ServiceController::class, 'index'])->name('service');
 
@@ -58,3 +58,9 @@ Route::get('/donations/history', [DonateController::class, 'history'])
 
 Route::get('/learn/{id}', [LearnController::class, 'show'])
     ->name('learn');
+
+// Midtrans Payment Gateway Callback
+Route::post('/pay', [PaymentController::class, 'pay'])->name('pay');
+Route::post('/midtrans/callback', [PaymentController::class, 'callback']);
+
+
