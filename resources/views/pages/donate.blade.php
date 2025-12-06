@@ -27,8 +27,8 @@
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
                     <div class="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3">Donate Now</div>
-                    <h1 class="display-6 mb-5">Thanks For The Results Achieved With You</h1>
-                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
+                    <h1 class="display-6 mb-5">Satu Aksi Anda, Ribuan Harapan Hidup Kembali</h1>
+                    <p class="mb-0">Satu tindakan sederhana dapat membawa perubahan yang tak terbayangkan bagi banyak orang. Ketika kita memilih untuk membantu, kita tidak hanya memberi bantuan sesaat—kita menghidupkan kembali harapan yang mungkin telah lama padam. Ribuan orang menantikan uluran tangan dan kepedulian kita. Melalui satu aksi kebaikan, kita bisa membuka pintu kesempatan, menguatkan semangat, dan mengembalikan senyuman di wajah mereka yang membutuhkan.</p>
                 </div>
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
                     <div class="h-100 bg-secondary p-5">

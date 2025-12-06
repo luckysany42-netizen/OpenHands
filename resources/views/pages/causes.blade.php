@@ -20,58 +20,97 @@
     </div>
     <!-- Page Header End -->
 
-
     <!-- Causes Start -->
     <div class="container-xxl py-5">
         <div class="container">
+
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-                <div class="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3">Feature Causes</div>
+                <div class="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3">
+                    Feature Causes
+                </div>
                 <h1 class="display-6 mb-5">Every Child Deserves The Opportunity To Learn</h1>
             </div>
+
             <div class="row g-4 justify-content-center">
                 @foreach ($products as $item)
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div
-                            class="causes-item d-flex flex-column bg-white border-top border-5 border-primary rounded-top overflow-hidden h-100">
+                        <div class="causes-item d-flex flex-column bg-white border-top border-5 border-primary rounded-top overflow-hidden h-100">
+
                             <div class="text-center p-4 pt-0">
+
                                 <div class="d-inline-block bg-primary text-white rounded-bottom fs-5 pb-1 px-3 mb-4">
                                     <small>{{ $item->category->name }}</small>
                                 </div>
+
+                                <!-- GAMBAR DIBAWAH JUDUL -->
                                 <h5 class="mb-3">{{ $item->name }}</h5>
+
+                                @if($item->photos)
+                                    <img src="{{ Storage::url($item->photos) }}"
+                                         class="img-fluid mb-3"
+                                         style="border-radius: 10px;"
+                                         alt="{{ $item->name }}">
+                                @endif
+
                                 <p>{!! $item->thumbnail_description !!}</p>
+
                                 <div class="causes-progress bg-light p-3 pt-2">
                                     <div class="d-flex justify-content-between">
-                                        <p class="text-dark">{{ number_format($item->goal_price) }} <small
-                                                class="text-body">Goal</small></p>
-                                        <p class="text-dark">{{ number_format($item->current_price) }} <small
-                                                class="text-body">Raised</small></p>
+                                        <p class="text-dark">
+                                            {{ number_format($item->goal_price) }}
+                                            <small class="text-body">Goal</small>
+                                        </p>
+
+                                        <p class="text-dark">
+                                            {{ number_format($item->current_price) }}
+                                            <small class="text-body">Raised</small>
+                                        </p>
                                     </div>
+
                                     <div class="progress">
-                                        <div class="progress-bar" role="progressbar"
-                                            style="width: {{ ($item->current_price / $item->goal_price) * 100 }}%;"
-                                            aria-valuenow="{{ ($item->current_price / $item->goal_price) * 100 }}"
-                                            aria-valuemin="0" aria-valuemax="100">
-                                            <span>{{ round(($item->current_price / $item->goal_price) * 100) }}%</span>
+                                        <div class="progress-bar"
+                                             role="progressbar"
+                                             style="width: {{ $item->goal_price ? ($item->current_price / $item->goal_price * 100) : 0 }}%;"
+                                             aria-valuenow="{{ $item->goal_price ? ($item->current_price / $item->goal_price * 100) : 0 }}"
+                                             aria-valuemin="0"
+                                             aria-valuemax="100">
+
+                                             <span>
+                                                {{ $item->goal_price ? round(($item->current_price / $item->goal_price) * 100) : 0 }}%
+                                             </span>
+
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
+
+                            <!-- OVERLAY AREA (TOMBOL READ MORE) -->
                             <div class="position-relative mt-auto">
-                                <img class="img-fluid" src="{{Storage::url($item->photos)}}" alt="">
+
+                                <!-- INVISIBLE IMAGE UNTUK MENJAGA OVERLAY -->
+                                @if($item->photos)
+                                    <img class="img-fluid"
+                                         src="{{ Storage::url($item->photos) }}"
+                                         style="opacity: 0; height: 0; width: 100%;">
+                                @endif
+
                                 <div class="causes-overlay">
                                     <a class="btn-readmore-learn card-readmore"
                                         href="{{ auth()->check() ? route('learn', $item->id) : route('login') }}">
-                                            Read More
-                                            <span class="icon-circle">
-                                                <i class="fa fa-arrow-right"></i>
-                                            </span>
-                                        </a>
+                                        Read More
+                                        <span class="icon-circle">
+                                            <i class="fa fa-arrow-right"></i>
+                                        </span>
+                                    </a>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 @endforeach
             </div>
+
         </div>
     </div>
     <!-- Causes End -->
