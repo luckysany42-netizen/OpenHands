@@ -56,7 +56,7 @@
                 <h5 class="text-light mb-3" style="font-size:1.1rem;">Address</h5>
                 <p><i class="fa fa-map-marker-alt me-2"></i>Jl. Manukan Kulon, Surabaya, Indonesia</p>
                 <p><i class="fa fa-phone-alt me-2"></i>+62 0889-8901-9440</p>
-                <p><i class="fa fa-envelope me-2"></i>OpenHands@gmail.com</p>
+                <p><i class="fa fa-envelope me-2"></i>openhands1718@gmail.com</p>
             </div>
 
             <!-- Quick Links -->
@@ -64,7 +64,6 @@
                 <h5 class="text-light mb-3" style="font-size:1.1rem;">Quick Links</h5>
                 <a class="btn btn-link text-white-50" href="/about">About Us</a>
                 <a class="btn btn-link text-white-50" href="/contact">Contact Us</a>
-                <a class="btn btn-link text-white-50" href="/service">Our Services</a>
                 <a class="btn btn-link text-white-50" href="/contact">Support</a>
             </div>
 
@@ -75,7 +74,7 @@
                 <p><i class="fa fa-hand-holding-heart me-2"></i>How To Donate</p>
                 <p><i class="fa fa-shield-alt me-2"></i>Privacy & Safety</p>
                 <p><i class="fa fa-life-ring me-2"></i>Get Assistance</p>
-                <p><i class="fa fa-envelope me-2"></i>info@openhands.org</p>
+                <p><i class="fa fa-envelope me-2"></i>openhands1718@gmail.com</p>
             </div>
 
         </div>

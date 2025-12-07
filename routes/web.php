@@ -6,12 +6,12 @@ use App\Http\Controllers\ContacController;
 use App\Http\Controllers\DonateController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OurTeamController;
-use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\LearnController;
 use App\Http\Controllers\PaymentController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ContactController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('about', [AboutController::class, 'index'])->name('about');
@@ -28,8 +28,12 @@ Route::post('donation/store', [DonateController::class, 'store'])
 Route::get('/success', [DonateController::class, 'success'])->name('success');
 // --- END DONATION ROUTES ---
 
-Route::get('contact', [ContacController::class, 'index'])->name('contact');
-Route::get('service', [ServiceController::class, 'index'])->name('service');
+// SHOW CONTACT PAGE
+Route::get('contact', [ContactController::class, 'index'])->name('contact');
+
+// SEND CONTACT FORM (baru)
+Route::post('/contact/send', [ContactController::class, 'send'])->name('contact.send');
+
 
 Route::view('learn', 'pages.learn')->name('learn');
 

@@ -74,57 +74,55 @@
 <!-- ============================= -->
 <!-- 2. TEAM -->
 <!-- ============================= -->
-<div class="container-xxl py-5">
-    <div class="container">
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+                <div class="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3">Anggota Tim</div>
+                <h1 class="display-6 mb-5">Mari Bertemu dengan Anggota Kita</h1>
+            </div>
 
-        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-            <div class="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3">Team Members</div>
-            <h1 class="display-6 mb-5">Let's Meet With Our Ordinary Soldiers</h1>
-        </div>
+            <div class="row g-4 justify-content-center">
 
-        <div class="row g-4 justify-content-center">
-
-            <!-- Member 1 -->
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="team-item position-relative rounded overflow-hidden">
-                    <div class="overflow-hidden">
-                        <img class="img-fluid" src="assets/img/team-2.jpg" alt="">
-                    </div>
-                    <div class="team-text bg-light text-center p-4">
-                        <h5>Full Name</h5>
-                        <p class="text-primary">Designation</p>
-                        <div class="team-social text-center">
-                            <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
+                {{-- Team Member 1 --}}
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="team-item position-relative rounded overflow-hidden">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="assets/img/team-2.jpg" alt="">
+                        </div>
+                        <div class="team-text bg-light text-center p-4">
+                            <h5>Lucky Mairino Sany</h5>
+                            <p class="text-primary">Designation</p>
+                            <div class="team-social text-center">
+                                <a class="btn btn-square" href="https://instagram.com/lkyymei" target="_blank"><i class="fab fa-instagram"></i></a>
+                                <a class="btn btn-square" href="https://wa.me/6281222116923" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                                <a class="btn btn-square" href="https://facebook.com/Kyle El" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Member 2 -->
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="team-item position-relative rounded overflow-hidden">
-                    <div class="overflow-hidden">
-                        <img class="img-fluid" src="assets/img/team-3.jpg" alt="">
-                    </div>
-                    <div class="team-text bg-light text-center p-4">
-                        <h5>Full Name</h5>
-                        <p class="text-primary">Designation</p>
-                        <div class="team-social text-center">
-                            <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
+                {{-- Team Member 2 --}}
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="team-item position-relative rounded overflow-hidden">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="assets/img/team-3.jpg" alt="">
+                        </div>
+                        <div class="team-text bg-light text-center p-4">
+                            <h5>M Hendry Risky F</h5>
+                            <p class="text-primary">Designation</p>
+                            <div class="team-social text-center">
+                               <a class="btn btn-square" href="https://instagram.com/lkyymei" target="_blank"><i class="fab fa-instagram"></i></a>
+                                <a class="btn btn-square" href="https://wa.me/6281222116923" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                                <a class="btn btn-square" href="https://facebook.com/Kyle El" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
+
             </div>
-
         </div>
-
     </div>
-</div>
-
+    <!-- Team End -->
 
 <!-- ============================= -->
 <!-- 3. APA YANG KAMU PERJUANGKAN -->

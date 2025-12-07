@@ -11,7 +11,7 @@
     <div class="top-bar text-white-50 row gx-0 align-items-center d-none d-lg-flex">
         <div class="col-lg-6 px-5 text-start">
             <small><i class="fa fa-map-marker-alt me-2"></i>Jl. Manukan Kulon, Surabaya, Indonesia</small>
-            <small class="ms-4"><i class="fa fa-envelope me-2"></i>OpenHands@gmail.com</small>
+            <small class="ms-4"><i class="fa fa-envelope me-2"></i>openhands1718@gmail.com</small>
         </div>
 
         <div class="col-lg-6 px-5 text-end">
@@ -59,9 +59,6 @@
                     </a>
 
                     <div class="dropdown-menu m-0">
-                        <a href="{{ route('service') }}" 
-                           class="dropdown-item {{ request()->routeIs('service') ? 'active' : '' }}">Service</a>
-
                         <a href="{{ route('donate') }}" 
                            class="dropdown-item {{ request()->routeIs('donate') ? 'active' : '' }}">Donate</a>
 
