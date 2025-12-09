@@ -9,7 +9,7 @@
 <!-- PAGE HEADER -->
 <div class="container-fluid page-header mb-5 wow fadeIn" data-wow-delay="0.1s">
     <div class="container text-center">
-        <h1 class="display-4 text-white animated slideInDown mb-4">About Us</h1>
+        <h1 class="display-4 text-white animated slideInDown mb-4">Tentang Kami</h1>
         <nav aria-label="breadcrumb animated slideInDown">
             <ol class="breadcrumb justify-content-center mb-0">
                 <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
@@ -111,9 +111,9 @@
                             <h5>M Hendry Risky F</h5>
                             <p class="text-primary">Designation</p>
                             <div class="team-social text-center">
-                               <a class="btn btn-square" href="https://instagram.com/lkyymei" target="_blank"><i class="fab fa-instagram"></i></a>
+                               <a class="btn btn-square" href="https://instagram.com/fedbrian" target="_blank"><i class="fab fa-instagram"></i></a>
                                 <a class="btn btn-square" href="https://wa.me/6281222116923" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                                <a class="btn btn-square" href="https://facebook.com/Kyle El" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square" href="https://facebook.com/Hen W Z" target="_blank"><i class="fab fa-facebook-f"></i></a>
                             </div>
                         </div>
                     </div>
@@ -142,19 +142,11 @@
             <div class="col-lg-4 col-md-6 wow fadeInUp">
                 <div class="service-item bg-white text-center h-100 p-4 p-xl-5">
                     <img class="img-fluid mb-4" src="assets/img/icon-1.png" alt="">
-                    <h4 class="mb-3">Child Education</h4>
+                    <h4 class="mb-3">Pendidikan Anak</h4>
                     <p>Program ini membantu anak-anak yang terdampak kondisi darurat agar tetap memiliki 
                     kesempatan belajar dengan fasilitas yang layak. Kami menyediakan perlengkapan sekolah,
                     ruang belajar aman, serta pendampingan agar mereka dapat terus mengejar masa depan
-                    dengan penuh harapan..</p>
-
-                    <a class="btn btn-outline-primary px-3"
-                       href="{{ auth()->check() ? route('causes') : route('login') }}">
-                        Learn More
-                        <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
-                            <i class="fa fa-arrow-right"></i>
-                        </div>
-                    </a>
+                    dengan penuh harapan.</p>
                 </div>
             </div>
 
@@ -162,19 +154,11 @@
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="service-item bg-white text-center h-100 p-4 p-xl-5">
                     <img class="img-fluid mb-4" src="assets/img/icon-2.png" alt="">
-                    <h4 class="mb-3">Medical Treatment</h4>
+                    <h4 class="mb-3">Perawatan Medis</h4>
                     <p>Program ini menyediakan bantuan kesehatan bagi masyarakat yang tidak memiliki akses
                     pelayanan medis setelah bencana atau keadaan darurat. Kami membantu dengan obat-obatan,
                     pemeriksaan dasar, serta dukungan tenaga medis agar setiap orang mendapatkan perawatan 
-                    yang layak dan tepat..</p>
-
-                    <a class="btn btn-outline-primary px-3"
-                       href="{{ auth()->check() ? route('causes') : route('login') }}">
-                        Learn More
-                        <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
-                            <i class="fa fa-arrow-right"></i>
-                        </div>
-                    </a>
+                    yang layak dan tepat.</p>
                 </div>
             </div>
 
@@ -182,19 +166,11 @@
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                 <div class="service-item bg-white text-center h-100 p-4 p-xl-5">
                     <img class="img-fluid mb-4" src="assets/img/icon-3.png" alt="">
-                    <h4 class="mb-3">Pure Drinking Water</h4>
+                    <h4 class="mb-3">Air Minum Bersih</h4>
                     <p>Program ini memastikan masyarakat terdampak tetap memiliki akses air bersih yang 
                     layak untuk kebutuhan sehari-hari setelah bencana terjadi. Kami menyediakan sumber air,
                     instalasi sanitasi, filter aman, serta edukasi kebersihan agar lingkungan tetap sehat 
                     dan mendukung pemulihan masyarakat.</p>
-
-                    <a class="btn btn-outline-primary px-3"
-                       href="{{ auth()->check() ? route('causes') : route('login') }}">
-                        Learn More
-                        <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
-                            <i class="fa fa-arrow-right"></i>
-                        </div>
-                    </a>
                 </div>
             </div>
 
@@ -220,7 +196,7 @@
             <!-- Item 1 -->
             <div class="testimonial-item text-center">
                 <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4"
-                     src="assets/img/testimonial-1.jpg"
+                     src="assets/img/testimonial-1.jpeg"
                      style="width: 100px; height: 100px;">
                 <div class="testimonial-text rounded text-center p-4">
                     <p>Saat banjir datang, semua buku sekolah dan pakaian saya hanyut terbawa air. 
@@ -229,7 +205,7 @@
                     kembali belajar dan bertemu teman-teman. Terima kasih kepada semua yang sudah 
                     membantu. Saya akan belajar lebih giat agar suatu hari bisa membantu orang lain 
                     seperti kalian membantu saya.</p>
-                    <h5 class="mb-1">Rina</h5>
+                    <h5 class="mb-1">Adek Aqis</h5>
                     <span class="fst-italic">Penerima Program Pendidikan Anak</span>
                 </div>
             </div>
@@ -244,7 +220,7 @@
                     kenakan saat itu. Tetapi ketika bantuan datang, saya menerima pakaian bersih dan 
                     selimut tebal. Rasanya seperti menerima pelukan hangat. Terima kasih kepada para 
                     donatur, doa kami selalu menyertai kalian. Kebaikan ini tidak akan kami lupakan.</p>
-                    <h5 class="mb-1">Ibu Mariam</h5>
+                    <h5 class="mb-1">Bapak Haris</h5>
                     <span class="fst-italic">Penerima Bantuan Pakaian & Kebutuhan Harian</span>
                 </div>
             </div>
@@ -255,10 +231,10 @@
                      src="assets/img/testimonial-3.jpg"
                      style="width: 100px; height: 100px;">
                 <div class="testimonial-text rounded text-center p-4">
-                    <p>Saya kehilangan rumah dan semua barang saya. Saya hanya membawa baju yang saya 
-                    kenakan saat itu. Tetapi ketika bantuan datang, saya menerima pakaian bersih dan 
-                    selimut tebal. Rasanya seperti menerima pelukan hangat. Terima kasih kepada para 
-                    donatur, doa kami selalu menyertai kalian. Kebaikan ini tidak akan kami lupakan.</p>
+                    <p>Kami hidup di pengungsian selama berminggu-minggu. Anak saya sakit karena kurang air 
+                    bersih dan sanitasi. Setelah bantuan air bersih datang, semuanya berubah. Anak saya 
+                    mulai pulih dan keluarga kami bisa hidup lebih sehat. Terima kasih kepada donatur yang 
+                    telah membantu tanpa mengenal nama dan wajah kami. Bantuan kalian menyelamatkan hidup.</p>
                     <h5 class="mb-1">Bapak Arman</h5>
                     <span class="fst-italic">Penerima Program Air Bersih & Kesehatan</span>
                 </div>

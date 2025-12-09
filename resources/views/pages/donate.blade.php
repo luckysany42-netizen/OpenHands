@@ -25,10 +25,15 @@
         <div class="container">
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
-                    <div class="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3">Donate Now</div>
+                    <div class="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3">Donasi Sekarang</div>
                     <h1 class="display-6 mb-5">Satu Aksi Anda, Ribuan Harapan Hidup Kembali</h1>
                     <p class="mb-0">
-                        Satu tindakan sederhana dapat membawa perubahan yang tak terbayangkan bagi banyak orang...
+                        Satu tindakan sederhana dapat membawa perubahan yang tak terbayangkan bagi banyak 
+                        orang. Ketika kita memilih untuk membantu, kita tidak hanya memberi bantuan 
+                        sesaat kita menghidupkan kembali harapan yang mungkin telah lama padam. 
+                        Ribuan orang menantikan uluran tangan dan kepedulian kita. Melalui satu aksi 
+                        kebaikan, kita bisa membuka pintu kesempatan, menguatkan semangat, dan 
+                        mengembalikan senyuman di wajah mereka yang membutuhkan.
                     </p>
                 </div>
 

@@ -60,7 +60,7 @@
                         <div class="container">
                             <div class="row justify-content-center">
                                 <div class="col-lg-7 pt-5">
-                                    <h1 class="display-4 text-white mb-3 animated slideInDown">{{ $campaign->name }}</h1>
+                                    <h1 class="display-4 text-white animated slideInDown mb-4">Detail Campaign</h1>
                                     <p class="fs-5 text-white-50 mb-5 animated slideInDown">
                                         Pelajari informasi lengkap dari campaign ini.
                                     </p>

@@ -102,7 +102,7 @@
                         </div>
 
                         <!-- FIXED: Learn More harus pakai parameter id (default 1 untuk halaman non-item) -->
-                        <a href="{{ auth()->check() ? route('learn', 1) : route('login') }}" class="btn btn-primary d-inline-flex align-items-center py-2 px-4">
+                        <a href="{{ auth()->check() ? route('about', 1) : route('login') }}" class="btn btn-primary d-inline-flex align-items-center py-2 px-4">
                             Learn More
                             <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-3">
                                 <i class="fa fa-arrow-right"></i>
@@ -128,7 +128,7 @@
     <div class="container py-5">
 
         <div class="text-center mx-auto mb-5 wow fadeInUp" style="max-width: 500px;">
-            <div class="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3">Feature Causes</div>
+            <div class="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3">Program Donasi</div>
             <h1 class="display-6 mb-5">Berbagi bukan tentang jumlah tapi kepedulian</h1>
         </div>
 
@@ -246,51 +246,33 @@
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="service-item bg-white text-center h-100 p-4 p-xl-5">
                         <img class="img-fluid mb-4" src="assets/img/icon-1.png" alt="">
-                        <h4 class="mb-3">Child Education</h4>
+                        <h4 class="mb-3">Pendidikan Anak</h4>
                         <p class="mb-4">
                             Program ini membantu anak-anak yang terdampak kondisi darurat agar tetap memiliki kesempatan belajar dengan fasilitas yang layak.
                             Kami menyediakan perlengkapan sekolah, ruang belajar aman, serta pendampingan agar mereka dapat terus mengejar masa depan dengan penuh harapan.
                         </p>
-                        <a class="btn btn-outline-primary px-3 mt-auto" href="{{ auth()->check() ? route('learn', 1) : route('login') }}">
-                            Learn More
-                            <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
-                                <i class="fa fa-arrow-right"></i>
-                            </div>
-                        </a>
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="service-item bg-white text-center h-100 p-4 p-xl-5">
                         <img class="img-fluid mb-4" src="assets/img/icon-2.png" alt="">
-                        <h4 class="mb-3">Medical Treatment</h4>
+                        <h4 class="mb-3">Perawatan Medis</h4>
                         <p class="mb-4">
                             Program ini menyediakan bantuan kesehatan bagi masyarakat yang tidak memiliki akses pelayanan medis setelah bencana atau keadaan darurat.
                             Kami membantu dengan obat-obatan, pemeriksaan dasar, serta dukungan tenaga medis agar setiap orang mendapatkan perawatan yang layak dan tepat.
                         </p>
-                        <a class="btn btn-outline-primary px-3 mt-auto" href="{{ auth()->check() ? route('learn', 1) : route('login') }}">
-                            Learn More
-                            <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
-                                <i class="fa fa-arrow-right"></i>
-                            </div>
-                        </a>
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="service-item bg-white text-center h-100 p-4 p-xl-5">
                         <img class="img-fluid mb-4" src="assets/img/icon-3.png" alt="">
-                        <h4 class="mb-3">Pure Drinking Water</h4>
+                        <h4 class="mb-3">Air Minum Bersih</h4>
                         <p class="mb-4">
                             Program ini memastikan masyarakat terdampak tetap memiliki akses air bersih yang layak untuk kebutuhan sehari-hari setelah bencana terjadi.
                             Kami menyediakan sumber air, instalasi sanitasi, filter aman, serta edukasi kebersihan agar lingkungan tetap sehat dan mendukung pemulihan masyarakat.
                         </p>
-                        <a class="btn btn-outline-primary px-3 mt-auto" href="{{ auth()->check() ? route('learn', 1) : route('login') }}">
-                            Learn More
-                            <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
-                                <i class="fa fa-arrow-right"></i>
-                            </div>
-                        </a>
                     </div>
                 </div>
             </div>
@@ -300,100 +282,6 @@
         </div>
     </div>
     <!-- Service End -->
-
-    <!-- Donate Start -->
-    <div class="container-fluid donate my-5 py-5" data-parallax="scroll" data-image-src="assets/img/carousel-2.jpg">
-        <div class="container py-5">
-            <div class="row g-5 align-items-center">
-                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
-                    <div class="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3">Donate Now</div>
-                    <h1 class="display-6 text-white mb-5">Satu Aksi Anda, Ribuan Harapan Hidup Kembali</h1>
-                    <p class="text-white-50 mb-0">Satu tindakan sederhana dapat membawa perubahan yang tak terbayangkan bagi banyak orang. Ketika kita memilih untuk membantu, kita tidak hanya memberi bantuan sesaat—kita menghidupkan kembali harapan yang mungkin telah lama padam. Ribuan orang menantikan uluran tangan dan kepedulian kita. Melalui satu aksi kebaikan, kita bisa membuka pintu kesempatan, menguatkan semangat, dan mengembalikan senyuman di wajah mereka yang membutuhkan.</p>
-                </div>
-                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                    <div class="h-100 bg-white p-5">
-                        <form method="post" action="{{route('donate.store')}}" enctype="multipart/form-data">
-                            @csrf
-
-                                                     <div class="row g-3">
-                            <div class="col-12">
-                                <div class="form-floating mb-3">
-                                    <input type="text"
-                                        class="form-control bg-light border-0 shadow-sm"
-                                        name="username"
-                                        id="username"
-                                        placeholder="Your Name"
-                                        value="{{ auth()->check() ? auth()->user()->name : '' }}"
-                                        {{ auth()->check() ? 'readonly' : '' }}
-                                        required>
-                                    <label for="username">Your Name</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-floating mb-4">
-                                    <input type="email"
-                                        class="form-control bg-light border-0 shadow-sm"
-                                        name="email"
-                                        id="email"
-                                        placeholder="Your Email"
-                                        value="{{ auth()->check() ? auth()->user()->email : '' }}"
-                                        {{ auth()->check() ? 'readonly' : '' }}
-                                        required>
-                                    <label for="email">Your Email</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-floating mb-3" style="border-radius: 10px; overflow: hidden;">
-                                    <select id="category_id" name="category_id"
-                                        class="form-control bg-light border-0 shadow-sm"
-                                        style="height: 58px;">
-                                        @foreach ($categories as $category)
-                                            <option value="{{ $category->id }}">{{ $category->name }}</option>
-                                        @endforeach
-                                    </select>
-                                    <label for="category_id">Choose Category</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-floating mb-3" style="border-radius: 10px; overflow: hidden;">
-                                    <select id="products_id" name="products_id"
-                                        class="form-control bg-light border-0 shadow-sm"
-                                        style="height: 58px;">
-                                        @foreach ($product as $item)
-                                            <option value="{{ $item->id }}">{{ $item->name }}</option>
-                                        @endforeach
-                                    </select>
-                                    <label for="products_id">Choose Campaign</label>
-                                </div>
-                            </div>
-                                <div class="col-12">
-                                    <div class="btn-group d-flex justify-content-around">
-                                        <input type="radio" class="btn-check" name="donate_price" id="donate_price1" value="10000" checked>
-                                        <label class="btn btn-light py-3" for="donate_price1">Rp.10.000</label>
-
-                                        <input type="radio" class="btn-check" name="donate_price" id="donate_price2" value="20000">
-                                        <label class="btn btn-light py-3" for="donate_price2">Rp.20.000</label>
-
-                                        <input type="radio" class="btn-check" name="donate_price" id="donate_price3" value="30000">
-                                        <label class="btn btn-light py-3" for="donate_price3">Rp.30.000</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <button class="btn btn-primary px-5" style="height: 60px;">
-                                        Donate Now
-                                        <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
-                                            <i class="fa fa-arrow-right"></i>
-                                        </div>
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Donate End -->
 
         <!-- Team Start -->
     <div class="container-xxl py-5">
@@ -433,9 +321,9 @@
                             <h5>M Hendry Risky F</h5>
                             <p class="text-primary">Designation</p>
                             <div class="team-social text-center">
-                               <a class="btn btn-square" href="https://instagram.com/lkyymei" target="_blank"><i class="fab fa-instagram"></i></a>
-                                <a class="btn btn-square" href="https://wa.me/6281222116923" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                                <a class="btn btn-square" href="https://facebook.com/Kyle El" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                               <a class="btn btn-square" href="https://instagram.com/fedbrian" target="_blank"><i class="fab fa-instagram"></i></a>
+                                <a class="btn btn-square" href="https://wa.me/6285119547096" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                                <a class="btn btn-square" href="https://facebook.com/Hen W Z" target="_blank"><i class="fab fa-facebook-f"></i></a>
                             </div>
                         </div>
                     </div>
@@ -455,12 +343,12 @@
             </div>
             <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
                 <div class="testimonial-item text-center">
-                    <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="assets/img/testimonial-1.jpg"
+                    <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="assets/img/testimonial-1.jpeg"
                         style="width: 100px; height: 100px;">
                     <div class="testimonial-text rounded text-center p-4">
                         <p>Saat banjir datang, semua buku sekolah dan pakaian saya hanyut terbawa air. Saya pikir saya tidak bisa kembali sekolah lagi. Tapi ketika bantuan datang, saya menerima seragam baru, buku, dan perlengkapan belajar. Saya sangat senang karena bisa kembali belajar dan bertemu teman-teman. Terima kasih kepada semua yang sudah membantu. Saya akan belajar lebih giat agar suatu hari bisa membantu orang lain seperti kalian membantu saya.
                         </p>
-                        <h5 class="mb-1">Rina</h5>
+                        <h5 class="mb-1">Adek Aqis</h5>
                         <span class="fst-italic">Penerima Program Pendidikan Anak</span>
                     </div>
                 </div>
@@ -470,7 +358,7 @@
                     <div class="testimonial-text rounded text-center p-4">
                         <p>Saya kehilangan rumah dan semua barang saya. Saya hanya membawa baju yang saya kenakan saat itu. Tetapi ketika bantuan datang, saya menerima pakaian bersih dan selimut tebal. Rasanya seperti menerima pelukan hangat. Terima kasih kepada para donatur, doa kami selalu menyertai kalian. Kebaikan ini tidak akan kami lupakan.
                         </p>
-                        <h5 class="mb-1">Ibu Mariam</h5>
+                        <h5 class="mb-1">Bapak Haris</h5>
                         <span class="fst-italic">Penerima Bantuan Pakaian & Kebutuhan Harian</span>
                     </div>
                 </div>

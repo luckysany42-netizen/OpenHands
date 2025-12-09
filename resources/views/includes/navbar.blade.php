@@ -48,7 +48,7 @@
                    class="nav-item nav-link {{ request()->routeIs('about') ? 'active' : '' }}">About</a>
 
                 <a href="{{ route('causes') }}" 
-                   class="nav-item nav-link {{ request()->routeIs('causes') ? 'active' : '' }}">Causes</a>
+                   class="nav-item nav-link {{ request()->routeIs('causes') ? 'active' : '' }}">Campaign</a>
 
                 <!-- Dropdown Pages -->
                 <div class="nav-item dropdown">
@@ -66,7 +66,7 @@
 
                         <a href="{{ route('donate.history') }}" 
                            class="dropdown-item {{ request()->routeIs('donate.history') ? 'active' : '' }}">
-                           Riwayat Donasi
+                          Donate History
                         </a>
                     </div>
                 </div>
