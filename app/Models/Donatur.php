@@ -9,7 +9,7 @@ class Donatur extends Model
 {
     use HasFactory;
 
-    protected $table = 'donaturs'; // pastikan nama tabel benar
+    protected $table = 'donaturs'; 
 
     protected $fillable = [
         'name',

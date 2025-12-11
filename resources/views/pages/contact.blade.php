@@ -39,17 +39,36 @@
 
                     <form method="POST" action="{{ route('contact.send') }}">
                         @csrf
+
+                        <input type="hidden" name="user_id" value="{{ Auth::id() }}">
+
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" name="name" id="name" placeholder="Your Name" required>
+                                    <input 
+                                        type="text" 
+                                        class="form-control" 
+                                        name="name" 
+                                        id="name" 
+                                        value="{{ Auth::check() ? Auth::user()->name : '' }}"
+                                        placeholder="Your Name" 
+                                        readonly 
+                                        required>
                                     <label for="name">Your Name</label>
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                                    <input 
+                                        type="email" 
+                                        class="form-control" 
+                                        name="email" 
+                                        id="email"
+                                        value="{{ Auth::check() ? Auth::user()->email : '' }}"
+                                        placeholder="Your Email" 
+                                        readonly 
+                                        required>
                                     <label for="email">Your Email</label>
                                 </div>
                             </div>
@@ -92,8 +111,6 @@
                         loading="lazy" 
                         referrerpolicy="no-referrer-when-downgrade">
                         </iframe>
-
-
                     </div>
                 </div>
 

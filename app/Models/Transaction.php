@@ -12,7 +12,7 @@ class Transaction extends Model
 
     protected $fillable = [
         'products_id',
-        'user_id',      // 🟩 ditambahkan untuk relasi user
+        'user_id',     
         'username',
         'email',
         'description',
@@ -21,13 +21,12 @@ class Transaction extends Model
 
     protected $hidden = [];
 
-    // Relasi ke tabel product
+
     public function product()
     {
         return $this->belongsTo(Product::class, 'products_id', 'id');
     }
 
-    // 🟩 Relasi ke user (penting untuk history donasi per user)
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id', 'id');
