@@ -87,7 +87,7 @@
                     &copy; <a href="#" class="text-primary">OpenHands</a>, All Rights Reserved.
                 </div>
                 <div class="col-md-6 text-center text-md-end">
-                    Designed By <a href="https://htmlcodex.com" class="text-primary">HTML Codex</a>
+                    Designed By <a href="https://instagram.com/open.handss" class="text-primary">OpenHands</a>
                 </div>
             </div>
         </div>
