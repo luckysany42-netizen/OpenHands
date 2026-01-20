@@ -8,12 +8,12 @@
     <!-- Page Header Start -->
     <div class="container-fluid page-header mb-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container text-center">
-            <h1 class="display-4 text-white animated slideInDown mb-4">Donate</h1>
+            <h1 class="display-4 text-white animated slideInDown mb-4">Donasi</h1>
             <nav aria-label="breadcrumb animated slideInDown">
                 <ol class="breadcrumb justify-content-center mb-0">
-                    <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>
-                    <li class="breadcrumb-item text-primary active" aria-current="page">Donate</li>
+                    <li class="breadcrumb-item"><a class="text-white" href="#">Beranda</a></li>
+                    <li class="breadcrumb-item"><a class="text-white" href="#">Menu</a></li>
+                    <li class="breadcrumb-item text-primary active" aria-current="page">Donasi</li>
                 </ol>
             </nav>
         </div>
@@ -47,7 +47,7 @@
                                         placeholder="Your Name"
                                         value="{{ auth()->check() ? auth()->user()->name : '' }}"
                                         {{ auth()->check() ? 'readonly' : '' }} required>
-                                    <label for="username">Your Name</label>
+                                    <label for="username">Nama Anda</label>
                                 </div>
                             </div>
 
@@ -57,7 +57,7 @@
                                         placeholder="Your Email"
                                         value="{{ auth()->check() ? auth()->user()->email : '' }}"
                                         {{ auth()->check() ? 'readonly' : '' }} required>
-                                    <label for="email">Your Email</label>
+                                    <label for="email">Email Anda</label>
                                 </div>
                             </div>
 
@@ -68,7 +68,7 @@
                                             <option value="{{ $category->id }}">{{ $category->name }}</option>
                                         @endforeach
                                     </select>
-                                    <label for="category_id">Choose Category</label>
+                                    <label for="category_id">Pilih Category</label>
                                 </div>
                             </div>
 
@@ -79,7 +79,7 @@
                                             <option value="{{ $item->id }}">{{ $item->name }}</option>
                                         @endforeach
                                     </select>
-                                    <label for="products_id">Choose Campaign</label>
+                                    <label for="products_id">Pilih Program</label>
                                 </div>
                             </div>
 
@@ -109,7 +109,7 @@
 
                             <div class="col-12 mt-4">
                                 <button type="button" onclick="payNow()" class="btn btn-primary px-5" style="height: 60px;">
-                                    Donate Now
+                                    Donasi Sekarang
                                     <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-2">
                                         <i class="fa fa-arrow-right"></i>
                                     </div>

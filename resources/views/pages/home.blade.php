@@ -23,7 +23,7 @@
                                         <a href="{{ auth()->check() ? route('donate') : route('login') }}"
                                            class="btn px-5 py-3 rounded-pill fw-bold"
                                            style="font-size: 20px; background: #FF7A00; color: #fff; border: none; transition: .3s; box-shadow: 0 0 18px rgba(255,122,0,0.4);">
-                                            Donate Now
+                                            Donasi Sekarang
                                             <span class="ms-2 d-inline-flex rounded-circle"
                                                 style="width:32px;height:32px;background:white;color:#FF7A00;align-items:center;justify-content:center;">
                                                 <i class="fa fa-arrow-right"></i>
@@ -45,13 +45,14 @@
                                 <div class="col-lg-7 pt-5">
                                     <h1 class="display-4 text-white mb-3 animated slideInDown">Bersama Kita Hadirkan Harapan</h1>
                                     <p class="fs-5 text-white-50 mb-5 animated slideInDown">
-                                        Donasi Anda memberi kesempatan baru bagi mereka yang sedang berjuang
+                                        Dengan kontribusi kecil, Anda ikut membangun masa depan yang lebih baik untuk banyak orang.
+                            Setiap bantuan yang diberikan membawa harapan baru bagi mereka yang membutuhkan.
                                     </p>
                                     <div class="text-center mt-4">
                                         <a href="{{ auth()->check() ? route('donate') : route('login') }}"
                                            class="btn px-5 py-3 rounded-pill fw-bold"
                                            style="font-size: 20px; background: #FF7A00; color: #fff; border: none; transition: .3s; box-shadow: 0 0 18px rgba(255,122,0,0.4);">
-                                            Donate Now
+                                            Donasi Sekarang
                                             <span class="ms-2 d-inline-flex rounded-circle"
                                                 style="width:32px;height:32px;background:white;color:#FF7A00;align-items:center;justify-content:center;">
                                                 <i class="fa fa-arrow-right"></i>
@@ -93,7 +94,7 @@
                 <!-- RIGHT CONTENT -->
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="h-100">
-                        <div class="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3">About Us</div>
+                        <div class="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3">Tentang Kami</div>
                         <h1 class="display-6 mb-5">Harapan Dimulai Dari Kebaikan</h1>
 
                         <div class="bg-light border-bottom border-5 border-primary rounded p-4 mb-4">
@@ -103,14 +104,14 @@
 
                         <!-- FIXED: Learn More harus pakai parameter id (default 1 untuk halaman non-item) -->
                         <a href="{{ auth()->check() ? route('about', 1) : route('login') }}" class="btn btn-primary d-inline-flex align-items-center py-2 px-4">
-                            Learn More
+                            Pelajari Lebih Lanjut
                             <div class="d-inline-flex btn-sm-square bg-white text-primary rounded-circle ms-3">
                                 <i class="fa fa-arrow-right"></i>
                             </div>
                         </a>
 
                         <a class="btn btn-outline-primary py-2 px-3" href="/contact">
-                            Contact Us
+                            Hubungi Kami
                             <div class="d-inline-flex btn-sm-square bg-primary text-white rounded-circle ms-2">
                                 <i class="fa fa-arrow-right"></i>
                             </div>
@@ -197,7 +198,7 @@
                             <div class="causes-overlay">
                                 <a class="btn-readmore-learn card-readmore"
                                    href="{{ auth()->check() ? route('learn', $item->id) : route('login') }}">
-                                    Read More
+                                    Baca Selengkapnya
                                     <span class="icon-circle">
                                         <i class="fa fa-arrow-right"></i>
                                     </span>
@@ -282,57 +283,137 @@
         </div>
     </div>
     <!-- Service End -->
+<!-- Penerima Donasi Start -->
+<div class="container-xxl py-5">
+    <div class="container">
 
-        <!-- Team Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-                <div class="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3">Anggota Tim</div>
-                <h1 class="display-6 mb-5">Mari Bertemu dengan Anggota Kita</h1>
+        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+            <div class="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3">
+                Para Penerima Donasi
             </div>
+            <h1 class="display-6 mb-5">Donasi Yang Telah Tersampaikan</h1>
+        </div>
 
-            <div class="row g-4 justify-content-center">
+        <div class="row g-4 justify-content-center">
 
-                {{-- Team Member 1 --}}
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item position-relative rounded overflow-hidden">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="assets/img/team-2.jpeg" alt="">
+            <!-- Penerima Donasi 1 -->
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="team-item position-relative rounded overflow-hidden">
+                    <div class="overflow-hidden">
+                        <img class="img-fluid" src="assets/img/team-2.jpeg" alt="Penerima Donasi">
+                    </div>
+                    <div class="team-text bg-light text-center p-4">
+
+                        <!-- Nama Program (selalu tampil) -->
+                        <h5 class="text-dark fw-bold mb-2">
+                            Program Bantuan Alat Tulis
+                        </h5>
+
+                        <!-- Info Pop Up -->
+                        <div class="donation-info">
+                            <p class="text-dark mb-1">
+                                Total Tersalurkan:
+                                <span class="text-primary fw-bold font-monospace">
+                                    Rp 2.500.000
+                                </span>
+                            </p>
+                            <small class="text-dark fst-italic" style="font-size: 13px;">
+                                Tersampaikan pada: 12 Desember 2025
+                            </small>
                         </div>
-                        <div class="team-text bg-light text-center p-4">
-                            <h5>Lucky Mairino Sany</h5>
-                            <p class="text-primary">Designation</p>
-                            <div class="team-social text-center">
-                                <a class="btn btn-square" href="https://instagram.com/lkyymei" target="_blank"><i class="fab fa-instagram"></i></a>
-                                <a class="btn btn-square" href="https://wa.me/6281222116923" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                                <a class="btn btn-square" href="https://facebook.com/Kyle El" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
+            </div>
 
-                {{-- Team Member 2 --}}
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="team-item position-relative rounded overflow-hidden">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="assets/img/team-3.jpeg" alt="">
+            <!-- Penerima Donasi 2 -->
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                <div class="team-item position-relative rounded overflow-hidden">
+                    <div class="overflow-hidden">
+                        <img class="img-fluid" src="assets/img/team-3.jpeg" alt="Penerima Donasi">
+                    </div>
+                    <div class="team-text bg-light text-center p-4">
+
+                        <h5 class="text-dark fw-bold mb-2">
+                            Program Bantuan Air Bersih
+                        </h5>
+
+                        <div class="donation-info">
+                            <p class="text-dark mb-1">
+                                Total Tersalurkan:
+                                <span class="text-primary fw-bold font-monospace">
+                                    Rp 3.750.000
+                                </span>
+                            </p>
+                            <small class="text-dark fst-italic" style="font-size: 13px;">
+                                Tersampaikan pada: 5 Januari 2026
+                            </small>
                         </div>
-                        <div class="team-text bg-light text-center p-4">
-                            <h5>M Hendry Risky F</h5>
-                            <p class="text-primary">Designation</p>
-                            <div class="team-social text-center">
-                               <a class="btn btn-square" href="https://instagram.com/fedbrian" target="_blank"><i class="fab fa-instagram"></i></a>
-                                <a class="btn btn-square" href="https://wa.me/6285119547096" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                                <a class="btn btn-square" href="https://facebook.com/Hen W Z" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
-
             </div>
+
+            <!-- Penerima Donasi 3 -->
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="team-item position-relative rounded overflow-hidden">
+                    <div class="overflow-hidden">
+                        <img class="img-fluid" src="assets/img/team-4.jpeg" alt="Penerima Donasi">
+                    </div>
+                    <div class="team-text bg-light text-center p-4">
+
+                        <h5 class="text-dark fw-bold mb-2">
+                            Program Bantuan Obat Lansia
+                        </h5>
+
+                        <div class="donation-info">
+                            <p class="text-dark mb-1">
+                                Total Tersalurkan:
+                                <span class="text-primary fw-bold font-monospace">
+                                    Rp 1.800.000
+                                </span>
+                            </p>
+                            <small class="text-dark fst-italic" style="font-size: 13px;">
+                                Tersampaikan pada: 20 Januari 2026
+                            </small>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Penerima Donasi 4 -->
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+                <div class="team-item position-relative rounded overflow-hidden">
+                    <div class="overflow-hidden">
+                        <img class="img-fluid" src="assets/img/team-5.jpeg" alt="Penerima Donasi">
+                    </div>
+                    <div class="team-text bg-light text-center p-4">
+
+                        <h5 class="text-dark fw-bold mb-2">
+                            Program Bantuan Sembako
+                        </h5>
+
+                        <div class="donation-info">
+                            <p class="text-dark mb-1">
+                                Total Tersalurkan:
+                                <span class="text-primary fw-bold font-monospace">
+                                    Rp 4.200.000
+                                </span>
+                            </p>
+                            <small class="text-dark fst-italic" style="font-size: 13px;">
+                                Tersampaikan pada: 2 Februari 2026
+                            </small>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
-    <!-- Team End -->
+</div>
+<!-- Penerima Donasi End -->
 
     <!-- Testimonial Start -->
     <div class="container-xxl py-5">

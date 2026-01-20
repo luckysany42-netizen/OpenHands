@@ -1,220 +1,218 @@
 body {
-    background-color: #FFFFFF;
+    background: #fff;
 }
 
+/* =========================
+   CONTENT BOX UTAMA
+========================= */
 .content-box {
-    display: flex;
-    align-items: stretch;
-    justify-content: space-between; 
-    flex-wrap: wrap; 
-    background: #FFF0E6; 
-    padding: 40px 25px 25px; /* extra top padding for a title above the boxes */ 
-    border-radius: 12px; 
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
-    margin: 40px auto; 
-    max-width: 1000px; 
-    gap: 30px; 
-    position: relative; 
-    padding-top: 40px; 
+    background: #FFF0E6;
+    padding: 40px 25px 100px;
+    border-radius: 14px;
+    max-width: 1000px;
+    margin: 40px auto;
+    position: relative;
+    transition: all .3s ease;
 }
 
-/* Title shown above the photo + text block */
-.content-title {
-    margin: 0 0 14px;
-    font-size: 45px;
-    font-weight: 700;
-    color: #2b2b2b;
-    white-space: nowrap;
-}
-
-/* Wrapper for photo + text to keep them side-by-side */
+/* =========================
+   LAYOUT KIRI & KANAN
+========================= */
 .content-wrapper {
     display: flex;
     gap: 30px;
-    align-items: flex-start; /* don't force children to stretch; allow text to control its own height */
-    flex: 1;
-    position: relative; /* so title can be positioned relative to wrapper */
+    align-items: stretch;
 }
 
+/* =========================
+   FOTO + PROGRESS
+========================= */
 .content-photo {
     width: 40%;
-    flex: 0 0 40%;
-    background: #FFFFFF;
-    border: none;
-    align-self: flex-start; /* keep photo at its intrinsic height and don't stretch */
-    border-radius: 10px;
-    position: relative; /* for absolute positioning of title */
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .content-photo img {
     width: 100%;
-    height: auto; /* let image maintain its own height until the box expands */
-    max-height: 280px; /* constrain very tall images so layout stays neat */
+    height: auto;
+    max-height: 280px;
     object-fit: cover;
-    display: block;
-    transition: height .28s ease, max-height .28s ease; /* smooth adjust when switching to 100% */
-    border-radius: 10px;
-    overflow: hidden;
+    transition: all .3s ease;
 }
 
-/* When the content-box has been expanded, make the wrapper stretch so photo matches text height */
-.content-box.expanded .content-wrapper {
-    align-items: stretch;
-}
-.content-box.expanded .content-photo {
-    align-self: stretch;
-}
+/* FOTO IKUT MEMANJANG SAAT EXPANDED */
 .content-box.expanded .content-photo img {
     height: 100%;
     max-height: none;
-    object-fit: cover;
 }
 
-/* Position the title at the top-right of the photo area */
-.content-photo .content-title {
-    position: absolute;
-    top: 0;
-    left: 100%;
-    margin-left: 18px;
-    margin-top: 8px;
-    transform: none;
-    background: transparent;
-    font-size: 45px;
-    font-weight: 700;
-    color: #2b2b2b;
-    text-align: center;
-    white-space: nowrap;
-    width: 200px;
-    padding: 0 8px;
+/* =========================
+   PROGRESS BAR
+========================= */
+.progress-wrapper {
+    margin-top: 14px;
 }
 
-/* Responsive: on small screens stack title above everything */
-@media (max-width: 768px) {
-    .content-photo .content-title {
-        position: static;
-        margin: 0 0 12px 0;
-        display: block;
-    }
-}
-
-.content-text {
-    flex: 1;
-    background: #FDF7F4;
-    padding: 18px 22px;
-    border-radius: 10px;
-    border: none;
-    font-size: 16px;
-    line-height: 1.6;
-    color: #000000;
-    display: block; /* allow inner clamp to control height instead of stretching */
-    margin-top: 110px; /* spacing between title and text box */
-}
-
-/* Read more / truncation helpers */
-.content-text .content-text-inner {
-    display: -webkit-box;
-    -webkit-line-clamp: 3; /* limit to 3 lines */
-    line-clamp: 3;
-    -webkit-box-orient: vertical;
+.progress {
+    height: 8px;
+    background: #ddd;
+    border-radius: 6px;
     overflow: hidden;
-    /* fallback/use exact height clamp to ensure consistent behavior */
-    max-height: calc(1.6em * 3);
 }
 
-.content-text.expanded .content-text-inner {
-    -webkit-line-clamp: unset;
-    line-clamp: unset;
-    display: block;
-    max-height: none;
+.progress-bar {
+    background: #0b3c42;
 }
 
-/* explicit collapsed state to ensure consistent initial layout */
+/* =========================
+   BAGIAN KANAN
+========================= */
+.content-right {
+    width: 60%;
+}
+
+.content-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #2b2b2b;
+}
+
+/* =========================
+   DESKRIPSI TEXT
+========================= */
+.content-text {
+    background: #FDF7F4;
+    padding: 18px;
+    border-radius: 10px;
+}
+
+/* DEFAULT (TERTUTUP) */
 .content-text.collapsed .content-text-inner {
     display: -webkit-box;
     -webkit-line-clamp: 3;
-    line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    max-height: calc(1.6em * 3);
 }
 
-/* Position read-more button inline at the end of text */
-.content-text-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-end;
-    gap: 8px;
+/* TERBUKA */
+.content-text.expanded .content-text-inner {
+    display: block;
+    overflow: visible;
 }
 
+/* =========================
+   TOMBOL SELENGKAPNYA
+========================= */
 .read-more-btn {
-    background: transparent;
     border: none;
-    color: #D3DAD9;
-    cursor: pointer;
+    background: none;
+    color: #ff6a00;
     font-weight: 600;
-    padding: 0;
-    margin: 0;
-    font-size: 14px;
-    white-space: nowrap;
+    margin-top: 8px;
+    cursor: pointer;
 }
 
-.read-more-btn:focus {
-    outline: none;
-}
-
-/* Donate Now inside content-box: full-width row under photo/text */
-.content-box .donate-now-wrapper {
+/* =========================
+   DONATE NOW (POPUP KAYAK DULU)
+========================= */
+.donate-now-wrapper {
     position: absolute;
-    left: 20px;
-    right: 20px;
-    top: 100%;
-    transform: translateY(12px);
+    left: 25px;
+    right: 25px;
+    bottom: 20px;
     opacity: 0;
-    visibility: hidden;
-    transition: transform .22s ease, opacity .18s ease;
-    z-index: 12;
-    display: flex;
-}
-.content-box .donate-now-wrapper .btn {
-    padding-left: 22px;
-    padding-right: 22px;
+    transform: translateY(12px);
+    transition: all .25s ease;
+    z-index: 10;
 }
 
-.content-box:hover .donate-now-wrapper {
-    transform: translateY(0);
+.content-box:hover .donate-now-wrapper,
+.content-box.expanded .donate-now-wrapper {
     opacity: 1;
-    visibility: visible;
+    transform: translateY(0);
 }
 
-/* style the popup as a full-width bar with centered text and right arrow */
 .donate-now-wrapper .btn {
+    width: 100%;
+    background: #ff6a00;
+    color: #fff;
+    border-radius: 10px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 18px;
+}
+
+.btn-circle {
+    width: 34px;
+    height: 34px;
+    background: #fff;
+    color: #ff6a00;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 12px;
-    width: 100%;
-    background: #ff6a00 !important;
-    color: #ffffff !important;
-    border-radius: 8px;
-    padding: 12px 18px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-    font-weight: 700;
-}
-.donate-now-wrapper .btn .btn-sm-square {
-    width: 36px;
-    height: 36px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: #ffffff !important;
-    color: #ff6a00 !important;
-    border-radius: 50%;
 }
 
-/* push subsequent content down when popup appears */
-.content-box:hover ~ .content-box {
-    transform: translateY(64px);
+/* =========================
+   TABEL DONATUR
+========================= */
+.donatur-section {
+    max-width: 1000px;
+    margin: 90px auto 0;
 }
-.content-box {
-    transition: transform .18s ease;
+
+.donatur-section table {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.donatur-section table thead {
+    background: #0b3c42;
+    color: white;
+}
+
+/* ===== PROGRESS BAR OREN ===== */
+.progress {
+    height: 8px;
+    background: #ffe3cf; /* background soft oren */
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    background: linear-gradient(90deg, #ff7a00, #ff9a3c);
+    border-radius: 6px;
+}
+
+/* ===== TABEL DONATUR OREN ===== */
+.donatur-section table {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.donatur-section table thead {
+    background: #ff7a00;
+    color: #ffffff;
+}
+
+.donatur-section table thead th {
+    font-weight: 700;
+    text-align: center;
+    border: none;
+}
+
+.donatur-section table tbody tr:nth-child(even) {
+    background: #fff5ec;
+}
+
+.donatur-section table tbody tr:hover {
+    background: #ffe3cf;
 }

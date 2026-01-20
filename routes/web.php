@@ -9,6 +9,7 @@ use App\Http\Controllers\OurTeamController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\LearnController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\DonationNotificationController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ContactController;
@@ -66,5 +67,7 @@ Route::get('/learn/{id}', [LearnController::class, 'show'])
 // Midtrans Payment Gateway Callback
 Route::post('/pay', [PaymentController::class, 'pay'])->name('pay');
 Route::post('/midtrans/callback', [PaymentController::class, 'callback']);
+
+Route::get('/donation-notifications', [DonationNotificationController::class, 'latest']);
 
 

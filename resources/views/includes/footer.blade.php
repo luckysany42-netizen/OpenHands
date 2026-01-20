@@ -18,7 +18,7 @@
                 </div>
 
                 <!-- Our Mission Added -->
-                <h5 class="text-light mb-2" style="font-size:1.05rem;">Our Mission</h5>
+                <h5 class="text-light mb-2" style="font-size:1.05rem;"> Misi Kita</h5>
                 <p style="line-height:1.5;">
                     Membangun jembatan kebaikan antara mereka yang ingin membantu 
                     dan mereka yang membutuhkan dukungan.
@@ -53,7 +53,7 @@
 
             <!-- Address -->
             <div class="col-lg-3 col-md-6">
-                <h5 class="text-light mb-3" style="font-size:1.1rem;">Address</h5>
+                <h5 class="text-light mb-3" style="font-size:1.1rem;">Alamat</h5>
                 <p><i class="fa fa-map-marker-alt me-2"></i>Jl. Manukan Kulon, Surabaya, Indonesia</p>
                 <p><i class="fa fa-phone-alt me-2"></i>+62 0889-8901-9440</p>
                 <p><i class="fa fa-envelope me-2"></i>openhands1718@gmail.com</p>
@@ -61,15 +61,15 @@
 
             <!-- Quick Links -->
             <div class="col-lg-3 col-md-6">
-                <h5 class="text-light mb-3" style="font-size:1.1rem;">Quick Links</h5>
-                <a class="btn btn-link text-white-50" href="/about">About Us</a>
-                <a class="btn btn-link text-white-50" href="/contact">Contact Us</a>
-                <a class="btn btn-link text-white-50" href="/contact">Support</a>
+                <h5 class="text-light mb-3" style="font-size:1.1rem;">Link</h5>
+                <a class="btn btn-link text-white-50" href="/about">Tentang Kami</a>
+                <a class="btn btn-link text-white-50" href="/contact">Hubungi Kami</a>
+                <a class="btn btn-link text-white-50" href="/contact">Bantuan</a>
             </div>
 
             <!-- Support & Help -->
             <div class="col-lg-3 col-md-6">
-                <h5 class="text-light mb-3" style="font-size:1.1rem;">Support & Help</h5>
+                <h5 class="text-light mb-3" style="font-size:1.1rem;">Bantuan & Pertolongan</h5>
                 <p><i class="fa fa-question-circle me-2"></i>FAQ</p>
                 <p><i class="fa fa-hand-holding-heart me-2"></i>How To Donate</p>
                 <p><i class="fa fa-shield-alt me-2"></i>Privacy & Safety</p>
@@ -87,7 +87,7 @@
                     &copy; <a href="#" class="text-primary">OpenHands</a>, All Rights Reserved.
                 </div>
                 <div class="col-md-6 text-center text-md-end">
-                    Designed By <a href="https://instagram.com/open.handss" class="text-primary">OpenHands</a>
+                    Didesain Oleh <a href="https://instagram.com/open.handss" class="text-primary">OpenHands</a>
                 </div>
             </div>
         </div>

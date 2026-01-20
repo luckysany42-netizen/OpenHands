@@ -15,7 +15,7 @@
         </div>
 
         <div class="col-lg-6 px-5 text-end">
-            <small>Follow us:</small>
+            <small>Ikuti Kami:</small>
             <a class="text-white-50 ms-3" href=""><i class="fab fa-facebook-f"></i></a>
             <a class="text-white-50 ms-3" href=""><i class="fab fa-twitter"></i></a>
             <a class="text-white-50 ms-3" href=""><i class="fab fa-linkedin-in"></i></a>
@@ -42,13 +42,13 @@
 
             <div class="navbar-nav ms-auto p-4 p-lg-0">
                 <a href="{{ route('home') }}" 
-                   class="nav-item nav-link {{ request()->routeIs('home') ? 'active' : '' }}">Home</a>
+                   class="nav-item nav-link {{ request()->routeIs('home') ? 'active' : '' }}">Beranda</a>
 
                 <a href="{{ route('about') }}" 
-                   class="nav-item nav-link {{ request()->routeIs('about') ? 'active' : '' }}">About</a>
+                   class="nav-item nav-link {{ request()->routeIs('about') ? 'active' : '' }}">Tentang</a>
 
                 <a href="{{ route('causes') }}" 
-                   class="nav-item nav-link {{ request()->routeIs('causes') ? 'active' : '' }}">Campaign</a>
+                   class="nav-item nav-link {{ request()->routeIs('causes') ? 'active' : '' }}">Program</a>
 
                 <!-- Dropdown Pages -->
                 <div class="nav-item dropdown">
@@ -60,26 +60,26 @@
 
                     <div class="dropdown-menu m-0">
                         <a href="{{ route('donate') }}" 
-                           class="dropdown-item {{ request()->routeIs('donate') ? 'active' : '' }}">Donate</a>
+                           class="dropdown-item {{ request()->routeIs('donate') ? 'active' : '' }}">Donasi</a>
 
                         <!-- Our Team dihapus di sini -->
 
                         <a href="{{ route('donate.history') }}" 
                            class="dropdown-item {{ request()->routeIs('donate.history') ? 'active' : '' }}">
-                          Donate History
+                          Riwayat Donasi
                         </a>
                     </div>
                 </div>
 
                 <a href="{{ route('contact') }}" 
-                   class="nav-item nav-link {{ request()->routeIs('contact') ? 'active' : '' }}">Contact</a>
+                   class="nav-item nav-link {{ request()->routeIs('contact') ? 'active' : '' }}">Hubungi</a>
 
                 <!-- Auth Buttons -->
                 <div class="d-none d-lg-flex ms-2">
 
                     @guest
                     <a class="login-btn" href="{{ route('login') }}">
-                        Login Now
+                        Login
                         <div class="login-icon ms-2">
                             <i class="fa fa-arrow-right"></i>
                         </div>

@@ -559,3 +559,67 @@
     pointer-events: auto;
 }
 
+/* Info donasi disembunyikan dulu */
+.donation-info {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+}
+
+/* Saat hover card, info muncul */
+.team-item:hover .donation-info {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* === DONATION TOAST FLOATING === */
+#donation-toast-container {
+    position: fixed;
+    top: 120px;
+    right: 20px;
+    z-index: 999999;
+    pointer-events: none;
+}
+
+.donation-toast {
+    background: #111827;
+    color: #ffffff;
+    padding: 14px 18px;
+    margin-bottom: 12px;
+    border-radius: 14px;
+    min-width: 320px;
+    max-width: 380px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    box-shadow: 0 15px 35px rgba(0,0,0,0.45);
+
+    /* 🔥 ANIMASI */
+    transform: translateX(120%);
+    animation: slideInOut 6s ease-in-out forwards;
+}
+
+@keyframes slideInOut {
+    0% {
+        transform: translateX(120%);
+        opacity: 0;
+    }
+    10% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    80% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-120%);
+        opacity: 0;
+    }
+}
+

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Transaction extends Model
 {
-    use SoftDeletes;
+    use HasFactory, SoftDeletes;
 
     protected $fillable = [
         'products_id',
@@ -17,10 +17,14 @@ class Transaction extends Model
         'email',
         'description',
         'donate_price',
+        'status',
     ];
 
     protected $hidden = [];
 
+    /* =========================
+     | RELATIONSHIPS
+     ========================= */
 
     public function product()
     {
@@ -30,5 +34,37 @@ class Transaction extends Model
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id', 'id');
+    }
+
+    /* =========================
+     | SCOPES
+     ========================= */
+
+    /**
+     * Ambil hanya transaksi donasi yang sukses
+     */
+    public function scopeSuccess($query)
+    {
+        return $query->where('status', 'success');
+    }
+
+    /* =========================
+     | ACCESSORS
+     ========================= */
+
+    /**
+     * Email donatur yang sudah disensor
+     * Contoh: adminsigma@gmail.com -> adm***********
+     */
+    public function getMaskedEmailAttribute()
+    {
+        if (!$this->email) {
+            return 'anon***';
+        }
+
+        $username = explode('@', $this->email)[0];
+        $prefix = substr($username, 0, 3);
+
+        return strtolower($prefix) . str_repeat('*', max(strlen($username) - 3, 3));
     }
 }

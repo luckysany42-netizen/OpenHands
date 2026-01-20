@@ -26,7 +26,7 @@ class User extends Authenticatable implements FilamentUser, HasAvatar
     ];
 
     /**
-     * 🔐 Hanya user dengan is_admin = 1 yang boleh masuk panel admin
+     * Hanya user dengan is_admin = 1 yang boleh masuk panel admin
      */
     public function canAccessPanel(Panel $panel): bool
     {
@@ -34,7 +34,7 @@ class User extends Authenticatable implements FilamentUser, HasAvatar
     }
 
     /**
-     * 🖼️ Avatar admin Filament
+     * Avatar admin Filament
      * Ambil dari foto profil user (sinkron user ↔ admin)
      */
     public function getFilamentAvatarUrl(): ?string
